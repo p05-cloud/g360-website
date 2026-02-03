@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="G360 Products - Power Storm Nutrition premium supplements. Protein powders, pre-workouts, amino acids, and more.">
+    <meta name="keywords" content="Power Storm Nutrition, Whey Protein, Pre Workout, BCAA, EAA, Supplements, Fitness Products">
+    <title>Products - G360 | Power Storm Nutrition</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Product Page Specific Styles */
+        .product-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .product-image {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.08);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--bg-primary);
+            padding: 6px 15px;
+            border-radius: 25px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-white);
+        }
+
+        .product-description {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Pricing Section */
+        .product-pricing {
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-size {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .price-amount {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        /* Flavor Selection */
+        .flavor-section {
+            margin-bottom: 1rem;
+        }
+
+        .flavor-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem;
+            color: var(--electric-blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .flavor-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .flavor-tag {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--gold-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-family: 'Rajdhani', sans-serif;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .flavor-tag:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--gold);
+        }
+
+        .enquire-btn {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        /* Filter buttons enhancement */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background: rgba(0, 212, 255, 0.03);
+            border-radius: 15px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .price-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-g">G</span><span class="logo-360">360</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link active">Products</a></li>
+                <li><a href="brands.html" class="nav-link">Brands</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Our <span class="highlight">Products</span></h1>
+            <p class="page-subtitle">Premium supplements for peak performance</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section products-section">
+        <div class="container">
+            <!-- Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="protein">Protein</button>
+                <button class="filter-btn" data-filter="amino">Amino Acids</button>
+                <button class="filter-btn" data-filter="performance">Performance</button>
+                <button class="filter-btn" data-filter="health">Health & Wellness</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid">
+
+                <!-- ==================== PROTEIN CATEGORY ==================== -->
+
+                <!-- Isolate Whey Protein -->
+                <div class="product-card" data-category="protein">
+                    <div class="product-image">
+                        <img src="assets/images/products/isolate-whey-new.jpg" alt="Isolate Whey Protein">
+                        <span class="product-badge">Premium</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Isolate Whey Protein</h3>
+                        <p class="product-description">26g protein from 100% whey isolate with 5.7g BCAAs. Zero added sugar, instantized, gluten-free, aspartame-free.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">2 KG</span>
+                                <span class="price-amount">₹8,700/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">Café Mocha</span>
+                                <span class="flavor-tag">American Icecream</span>
+                                <span class="flavor-tag">Chocolate</span>
+                                <span class="flavor-tag">Malai Kulfi</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Whey Blend -->
+                <div class="product-card" data-category="protein">
+                    <div class="product-image">
+                        <img src="assets/images/products/whey-blend-new.jpg" alt="Whey Blend Protein">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Whey Blend Protein</h3>
+                        <p class="product-description">24g protein concentrate & isolate blend. Just 2.9g carbs and 0.7g fats. Perfect for low carb, low fat diets.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">1 KG</span>
+                                <span class="price-amount">₹3,800/-</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-size">2 KG</span>
+                                <span class="price-amount">₹7,000/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">Café Mocha</span>
+                                <span class="flavor-tag">American Icecream</span>
+                                <span class="flavor-tag">Chocolate</span>
+                                <span class="flavor-tag">Malai Kulfi</span>
+                                <span class="flavor-tag">Mango</span>
+                                <span class="flavor-tag">Mix Berry</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Nitro Whey -->
+                <div class="product-card" data-category="protein">
+                    <div class="product-image">
+                        <img src="assets/images/products/nitro-whey-new.jpg" alt="Nitro Whey Protein">
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Nitro Whey Protein</h3>
+                        <p class="product-description">30g whey with 3g pure creatine monohydrate. Effectively builds muscle and strength with superior pumps.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">1 KG</span>
+                                <span class="price-amount">₹4,000/-</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-size">2 KG</span>
+                                <span class="price-amount">₹7,300/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">Café Mocha</span>
+                                <span class="flavor-tag">Chocolate</span>
+                                <span class="flavor-tag">Malai Kulfi</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Whey Diet -->
+                <div class="product-card" data-category="protein">
+                    <div class="product-image">
+                        <img src="assets/images/products/whey-diet-new.jpg" alt="Whey Diet Protein">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Whey Diet Protein</h3>
+                        <p class="product-description">26g protein with 4.5g Glutamine & Glutamic Acid, 7.4g BCAA and 3.5g EAA for lean muscle recovery.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">1 KG</span>
+                                <span class="price-amount">₹3,800/-</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-size">2 KG</span>
+                                <span class="price-amount">₹7,500/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">American Icecream</span>
+                                <span class="flavor-tag">Chocolate</span>
+                                <span class="flavor-tag">Malai Kulfi</span>
+                                <span class="flavor-tag">Mango</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Pure Gain -->
+                <div class="product-card" data-category="protein">
+                    <div class="product-image">
+                        <img src="assets/images/products/pure-gain.png" alt="Pure Gain Mass Gainer">
+                        <span class="product-badge">Gainer</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Pure Gain Mass Gainer</h3>
+                        <p class="product-description">327 calories per serving with 60g complex carbs and 3g creatine monohydrate. Fuel your muscle growth.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">1 KG</span>
+                                <span class="price-amount">₹1,800/-</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-size">3 KG</span>
+                                <span class="price-amount">₹4,800/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">Café Mocha</span>
+                                <span class="flavor-tag">Chocolate</span>
+                                <span class="flavor-tag">Malai Kulfi</span>
+                                <span class="flavor-tag">Mango</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- ==================== AMINO ACIDS CATEGORY ==================== -->
+
+                <!-- EAA -->
+                <div class="product-card" data-category="amino">
+                    <div class="product-image">
+                        <img src="assets/images/products/eaa.png" alt="EAA">
+                        <span class="product-badge">Essential</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">EAA Complex</h3>
+                        <p class="product-description">Essential Amino Acids for muscle mass. Provides necessary building blocks for muscle protein synthesis, growth and repair.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">250g</span>
+                                <span class="price-amount">₹2,500/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">Mix Berry</span>
+                                <span class="flavor-tag">Mango</span>
+                                <span class="flavor-tag">Watermelon</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- BCAA -->
+                <div class="product-card" data-category="amino">
+                    <div class="product-image">
+                        <img src="assets/images/products/bcaa.png" alt="BCAA">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">BCAA 2:1:1</h3>
+                        <p class="product-description">6g high quality BCAA in ideal 2:1:1 ratio. Boosts energy, reduces muscle fatigue and aids recovery post intense activity.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">250g</span>
+                                <span class="price-amount">₹2,300/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">Mix Berry</span>
+                                <span class="flavor-tag">Mango</span>
+                                <span class="flavor-tag">Watermelon</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- L-Leucine -->
+                <div class="product-card" data-category="amino">
+                    <div class="product-image">
+                        <img src="assets/images/products/bcaa.png" alt="L-Leucine">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">L-Leucine</h3>
+                        <p class="product-description">Promotes protein synthesis. Stimulates muscle protein synthesis and is the major fuel involved in anabolic (tissue building) reactions.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">100g</span>
+                                <span class="price-amount">₹800/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">Unflavoured</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- L-Glutamine -->
+                <div class="product-card" data-category="amino">
+                    <div class="product-image">
+                        <img src="assets/images/products/bcaa.png" alt="L-Glutamine">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">L-Glutamine</h3>
+                        <p class="product-description">Enhanced lean muscle gains. Promotes muscle volumization, boosts lean muscle mass, and results in faster gains in size and strength.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">100g</span>
+                                <span class="price-amount">₹800/-</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-size">300g</span>
+                                <span class="price-amount">₹2,400/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">Unflavoured</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- L-Carnitine -->
+                <div class="product-card" data-category="amino">
+                    <div class="product-image">
+                        <img src="assets/images/products/l-carnitine.png" alt="L-Carnitine">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">L-Carnitine</h3>
+                        <p class="product-description">Plays important role in energy metabolism. Helps transport fatty acids to mitochondria for energy, aids weight loss and athletic performance.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">475ml</span>
+                                <span class="price-amount">₹2,500/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">Unflavoured</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- ==================== PERFORMANCE CATEGORY ==================== -->
+
+                <!-- Pre-Workout -->
+                <div class="product-card" data-category="performance">
+                    <div class="product-image">
+                        <img src="assets/images/products/pre-workout.png" alt="Pre-Workout">
+                        <span class="product-badge">Energy</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Pre-Workout Formula</h3>
+                        <p class="product-description">Supports strength and muscle pumps. Mix 1 scoop with 200-250ml water and consume 15-20 minutes before training.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">200g</span>
+                                <span class="price-amount">₹1,500/-</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-size">400g</span>
+                                <span class="price-amount">₹2,500/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">Mix Berry</span>
+                                <span class="flavor-tag">Mango</span>
+                                <span class="flavor-tag">Watermelon</span>
+                                <span class="flavor-tag">Pink Guava</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Pure Creatine -->
+                <div class="product-card" data-category="performance">
+                    <div class="product-image">
+                        <img src="assets/images/products/pure-creatine.png" alt="Pure Creatine">
+                        <span class="product-badge">Strength</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Pure Creatine Monohydrate</h3>
+                        <p class="product-description">Formulated for long lasting training sessions. Reduces muscle soreness, improves recovery rates and enhances performance.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">100g</span>
+                                <span class="price-amount">₹700/-</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-size">250g</span>
+                                <span class="price-amount">₹1,700/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">Unflavoured</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Testo Booster -->
+                <div class="product-card" data-category="performance">
+                    <div class="product-image">
+                        <img src="assets/images/products/testo-booster.png" alt="Testo Booster">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Testo Booster</h3>
+                        <p class="product-description">Beneficial for reproductive health and immunity. Helps maintain healthy weight, relieve stress and improve workout performance.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">60 Tablets</span>
+                                <span class="price-amount">₹2,500/-</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Gainz -->
+                <div class="product-card" data-category="performance">
+                    <div class="product-image">
+                        <img src="assets/images/products/multivitamins.png" alt="Gainz">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Gainz Tablets</h3>
+                        <p class="product-description">Designed to support muscle growth and potentially aid in fat loss when combined with proper diet and exercise regimen.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">60 Tablets</span>
+                                <span class="price-amount">₹2,000/-</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- ==================== HEALTH & WELLNESS CATEGORY ==================== -->
+
+                <!-- Multivitamins -->
+                <div class="product-card" data-category="health">
+                    <div class="product-image">
+                        <img src="assets/images/products/multivitamins.png" alt="Multivitamins">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Multivitamins</h3>
+                        <p class="product-description">Complete vitamin formula for men and women with Vitamin D3 for bone health. Good for healthy skin and hair growth.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">60 Tablets</span>
+                                <span class="price-amount">₹850/-</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Omega-3 -->
+                <div class="product-card" data-category="health">
+                    <div class="product-image">
+                        <img src="assets/images/products/omega-3.png" alt="Omega-3">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Omega-3 Fish Oil</h3>
+                        <p class="product-description">DHA supports brain and cognitive health. Helps maintain structure of healthy nervous system for communication messages.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">60 Tablets</span>
+                                <span class="price-amount">₹1,000/-</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Fat Burner -->
+                <div class="product-card" data-category="health">
+                    <div class="product-image">
+                        <img src="assets/images/products/fat-burner.png" alt="Fat Burner">
+                        <span class="product-badge">Fat Loss</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Fat Burner</h3>
+                        <p class="product-description">Provides needed boost of energy, experience an increase in energy throughout the day. A fast metabolism is key to losing weight.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">60 Tablets</span>
+                                <span class="price-amount">₹2,500/-</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Calcium -->
+                <div class="product-card" data-category="health">
+                    <div class="product-image">
+                        <img src="assets/images/products/multivitamins.png" alt="Calcium">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Calcium Tablets</h3>
+                        <p class="product-description">Vital mineral for human health, playing a crucial role in various bodily functions. Most abundant mineral in the body for bones and teeth.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">60 Tablets</span>
+                                <span class="price-amount">₹700/-</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Digestive -->
+                <div class="product-card" data-category="health">
+                    <div class="product-image">
+                        <img src="assets/images/products/multivitamins.png" alt="Digestive Enzymes">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Digestive Enzymes</h3>
+                        <p class="product-description">Plays crucial role in breaking down food into smaller, absorbable components, facilitating nutrient absorption and supporting overall digestive health.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">60 Tablets</span>
+                                <span class="price-amount">₹1,500/-</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- ==================== FOOD CATEGORY ==================== -->
+
+                <!-- Peanut Butter -->
+                <div class="product-card" data-category="health">
+                    <div class="product-image">
+                        <img src="assets/images/products/pure-gain.png" alt="Peanut Butter">
+                        <span class="product-badge">Natural</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Peanut Butter</h3>
+                        <p class="product-description">100% Natural made with roasted peanuts. Deliciously smooth spread with extra peanut crunch. 8g protein per serve, no added salt, sugar or trans-fat.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">1 KG</span>
+                                <span class="price-amount">₹500/- - ₹1,000/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">Cookies & Cream</span>
+                                <span class="flavor-tag">Mango Chia Seed</span>
+                                <span class="flavor-tag">Chocolate Crunchy</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- High Protein Oats -->
+                <div class="product-card" data-category="health">
+                    <div class="product-image">
+                        <img src="assets/images/products/pure-gain.png" alt="High Protein Oats">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">High Protein Oats</h3>
+                        <p class="product-description">Versatile and nutritious breakfast option. Boosts protein content, makes it more filling for satiety, muscle building and blood sugar balance.</p>
+
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-size">1 KG</span>
+                                <span class="price-amount">₹450/- - ₹1,100/-</span>
+                            </div>
+                        </div>
+
+                        <div class="flavor-section">
+                            <span class="flavor-label">Available Flavors</span>
+                            <div class="flavor-options">
+                                <span class="flavor-tag">Chocolate & Rolled Oats</span>
+                                <span class="flavor-tag">Unflavoured</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Interested in Our Products?</h2>
+                <p class="cta-description">
+                    Contact us for pricing, bulk orders, or any product inquiries.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
+                    <a href="brands.html" class="btn btn-secondary btn-large">View Brands</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-g">G</span><span class="logo-360">360</span>
+                    </a>
+                    <p class="footer-tagline">Guru 360 - Complete Fitness Philosophy</p>
+                    <p class="footer-philosophy">"Believe in Karma"</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="brands.html">Brands</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>For inquiries and collaborations:</p>
+                    <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 G360 - Guru 360. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

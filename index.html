@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="G360 - Guru 360 | Prakash More - India's Premier Fitness Expert with 20+ years experience. Certified trainer, athlete, and brand expert.">
+    <meta name="keywords" content="G360, Guru 360, Prakash More, Fitness, Supplements, Power Storm Nutrition, Personal Training">
+    <title>G360 - Guru 360 | Prakash More</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Home Page Specific Styles */
+        .hero-home {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #000000;
+        }
+
+        .buddha-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            background-image: url('assets/images/swami.jpg');
+            background-size: auto 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            filter: sepia(100%) saturate(300%) brightness(80%) hue-rotate(10deg);
+        }
+
+        .buddha-background img {
+            display: none;
+        }
+
+        .hero-home-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 5%;
+            max-width: 1000px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding-top: 80px;
+            padding-bottom: 100px;
+        }
+
+        .hero-top {
+            text-align: center;
+        }
+
+        .hero-spacer {
+            flex: 1;
+        }
+
+        .hero-bottom {
+            text-align: center;
+        }
+
+        .power-storm-badge {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .power-storm-badge span {
+            color: var(--electric-blue);
+        }
+
+        .hero-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-g {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: clamp(6rem, 20vw, 14rem);
+            background: linear-gradient(180deg, #f4e4bc 0%, #d4af37 40%, #b8962e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 80px rgba(212, 175, 55, 0.5);
+            line-height: 1;
+        }
+
+        .hero-360 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: clamp(6rem, 20vw, 14rem);
+            color: #00d4ff;
+            text-shadow: 0 0 80px rgba(0, 212, 255, 0.5);
+            line-height: 1;
+        }
+
+        .guru-360-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 15px;
+            color: var(--electric-blue);
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .karma-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 50px;
+            margin-bottom: 2.5rem;
+        }
+
+        .karma-box .dharma-wheel {
+            font-size: 1.8rem;
+            color: var(--gold);
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .karma-box .karma-text {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            text-align: center;
+        }
+
+        .scroll-indicator span {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+        }
+
+        .scroll-arrow {
+            width: 24px;
+            height: 24px;
+            border-right: 2px solid var(--electric-blue);
+            border-bottom: 2px solid var(--electric-blue);
+            transform: rotate(45deg);
+            margin: 10px auto 0;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: rotate(45deg) translateY(0); }
+            50% { transform: rotate(45deg) translateY(10px); }
+        }
+
+        /* Prakash More Section */
+        .prakash-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .prakash-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .prakash-image-wrapper {
+            position: relative;
+        }
+
+        .prakash-image-wrapper img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .prakash-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: 15px;
+            bottom: 15px;
+            border: 3px solid var(--gold);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .prakash-content .section-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--electric-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .prakash-content h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .prakash-content h2 .gold {
+            color: var(--gold);
+        }
+
+        .prakash-intro {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+
+        .credentials-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cred-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px;
+        }
+
+        .cred-item .icon {
+            font-size: 1.3rem;
+        }
+
+        .cred-item span {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Products Preview */
+        .products-preview {
+            padding: 100px 0;
+            background: var(--bg-primary);
+        }
+
+        .products-preview .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .products-preview .section-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--electric-blue);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .products-preview h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+        }
+
+        .products-preview h2 .gold {
+            color: var(--gold);
+        }
+
+        .products-carousel {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .product-preview-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .product-preview-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.15);
+        }
+
+        .product-preview-card img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+
+        .product-preview-card h4 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .view-all-btn {
+            text-align: center;
+        }
+
+        /* Stats Section */
+        .stats-home {
+            padding: 80px 0;
+            background: linear-gradient(90deg, rgba(0, 212, 255, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%);
+        }
+
+        .stats-grid-home {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-item .number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--electric-blue) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-item .label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            margin-top: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-home {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .cta-home h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-home p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 992px) {
+            .prakash-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .products-carousel {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-grid-home {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-g, .hero-360 {
+                font-size: clamp(4rem, 15vw, 8rem);
+            }
+            .credentials-list {
+                grid-template-columns: 1fr;
+            }
+            .products-carousel {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-g, .hero-360 {
+                font-size: clamp(3rem, 18vw, 6rem);
+            }
+            .guru-360-text {
+                font-size: 1rem;
+                letter-spacing: 8px;
+            }
+            .products-carousel {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid-home {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-g">G</span><span class="logo-360">360</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="brands.html" class="nav-link">Brands</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-home">
+        <!-- Buddha Silhouette Background -->
+        <div class="buddha-background"></div>
+
+        <div class="hero-home-content">
+            <!-- Top Section: Logo -->
+            <div class="hero-top">
+                <div class="hero-logo">
+                    <span class="hero-g">G</span><span class="hero-360">360</span>
+                </div>
+                <p class="guru-360-text">GURU 360</p>
+            </div>
+
+            <!-- Spacer for Swami to be visible -->
+            <div class="hero-spacer"></div>
+
+            <!-- Bottom Section: Tagline and Buttons -->
+            <div class="hero-bottom">
+                <div class="karma-box">
+                    <span class="dharma-wheel">☸</span>
+                    <span class="karma-text">"Believe in Karma"</span>
+                </div>
+
+                <p class="hero-description">
+                    Transform your fitness journey with India's premier fitness expert.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="about.html" class="btn btn-primary">Discover More</a>
+                    <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Prakash More Section -->
+    <section class="prakash-section">
+        <div class="container">
+            <div class="prakash-grid">
+                <div class="prakash-image-wrapper">
+                    <img src="assets/images/hero/prakash-more.png" alt="Prakash More - Feel The Power, Be The Storm">
+                </div>
+                <div class="prakash-content">
+                    <span class="section-label">The Visionary</span>
+                    <h2>Prakash <span class="gold">More</span></h2>
+                    <p class="prakash-intro">
+                        Prakash More is the driving force behind G360 - Guru 360, representing a 360-degree
+                        approach to fitness and wellness. With over two decades of unwavering dedication
+                        to the fitness industry, Prakash has transformed countless lives and established
+                        himself as one of India's most respected fitness professionals.
+                    </p>
+
+                    <div class="credentials-list">
+                        <div class="cred-item">
+                            <span class="icon">🎓</span>
+                            <span>G.C.T.A (AUS) Certified</span>
+                        </div>
+                        <div class="cred-item">
+                            <span class="icon">🎓</span>
+                            <span>I.S.S.A (USA) Certified</span>
+                        </div>
+                        <div class="cred-item">
+                            <span class="icon">🏆</span>
+                            <span>India's 1st ON Master Trainer</span>
+                        </div>
+                        <div class="cred-item">
+                            <span class="icon">💪</span>
+                            <span>Big Flex Athlete</span>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-home">
+        <div class="container">
+            <div class="stats-grid-home">
+                <div class="stat-item">
+                    <div class="number">20+</div>
+                    <div class="label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">1000+</div>
+                    <div class="label">Athletes Trained</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">5+</div>
+                    <div class="label">Brand Partners</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">∞</div>
+                    <div class="label">Dedication</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Preview -->
+    <section class="products-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Power Storm Nutrition</span>
+                <h2>Premium <span class="gold">Products</span></h2>
+            </div>
+
+            <div class="products-carousel">
+                <div class="product-preview-card">
+                    <img src="assets/images/products/isolate-whey-new.jpg" alt="Isolate Whey">
+                    <h4>Isolate Whey</h4>
+                </div>
+                <div class="product-preview-card">
+                    <img src="assets/images/products/nitro-whey-new.jpg" alt="Nitro Whey">
+                    <h4>Nitro Whey</h4>
+                </div>
+                <div class="product-preview-card">
+                    <img src="assets/images/products/whey-diet-new.jpg" alt="Whey Diet">
+                    <h4>Whey Diet</h4>
+                </div>
+                <div class="product-preview-card">
+                    <img src="assets/images/products/whey-blend-new.jpg" alt="Whey Blend">
+                    <h4>Whey Blend</h4>
+                </div>
+            </div>
+
+            <div class="view-all-btn">
+                <a href="products.html" class="btn btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-home">
+        <div class="container">
+            <h2>Ready to Start Your Journey?</h2>
+            <p>Connect with G360 and transform your fitness goals into reality.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
+                <a href="brands.html" class="btn btn-secondary btn-large">Explore Brands</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-g">G</span><span class="logo-360">360</span>
+                    </a>
+                    <p class="footer-tagline">Guru 360 - Complete Fitness Philosophy</p>
+                    <p class="footer-philosophy">"Believe in Karma"</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="brands.html">Brands</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>For inquiries and collaborations:</p>
+                    <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 G360 - Guru 360. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
