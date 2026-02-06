@@ -148,6 +148,31 @@
             border-color: var(--gold);
         }
 
+        .flavor-tag.selectable {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .flavor-tag.selectable.active {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--bg-primary);
+            border-color: var(--gold);
+            font-weight: 600;
+        }
+
+        .flavor-tag.selectable:not(.active):hover {
+            background: rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .product-img {
+            transition: opacity 0.3s ease;
+        }
+
+        .product-img.switching {
+            opacity: 0.5;
+        }
+
         .enquire-btn {
             width: 100%;
             margin-top: 0.5rem;
@@ -549,7 +574,7 @@
                 <!-- Pre-Workout 400gm -->
                 <div class="product-card" data-category="performance">
                     <div class="product-image">
-                        <img src="assets/images/products/preworkout-pineapple-400gm.jpg" alt="Pre-Workout 400gm">
+                        <img src="assets/images/products/preworkout-pineapple-400gm.jpg" alt="Pre-Workout 400gm" class="product-img">
                         <span class="product-badge">Energy</span>
                     </div>
                     <div class="product-info">
@@ -564,13 +589,13 @@
                         </div>
 
                         <div class="flavor-section">
-                            <span class="flavor-label">Available Flavors</span>
+                            <span class="flavor-label">Select Flavor</span>
                             <div class="flavor-options">
-                                <span class="flavor-tag">Mango Crush</span>
-                                <span class="flavor-tag">Watermelon</span>
-                                <span class="flavor-tag">Mix Berries</span>
-                                <span class="flavor-tag">Strawberry</span>
-                                <span class="flavor-tag">Pineapple</span>
+                                <span class="flavor-tag selectable active" data-image="assets/images/products/preworkout-mango-400gm.jpg">Mango Crush</span>
+                                <span class="flavor-tag selectable" data-image="assets/images/products/preworkout-watermelon-400gm.jpg">Watermelon</span>
+                                <span class="flavor-tag selectable" data-image="assets/images/products/preworkout-mixberries-400gm.jpg">Mix Berries</span>
+                                <span class="flavor-tag selectable" data-image="assets/images/products/preworkout-strawberry-400gm.jpg">Strawberry</span>
+                                <span class="flavor-tag selectable" data-image="assets/images/products/preworkout-pineapple-400gm.jpg">Pineapple</span>
                             </div>
                         </div>
 
@@ -581,7 +606,7 @@
                 <!-- Pre-Workout 200gm -->
                 <div class="product-card" data-category="performance">
                     <div class="product-image">
-                        <img src="assets/images/products/preworkout-pinkguava-200gm.jpg" alt="Pre-Workout 200gm">
+                        <img src="assets/images/products/preworkout-mango-200gm.jpg" alt="Pre-Workout 200gm" class="product-img">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Pre-Workout 200gm</h3>
@@ -595,11 +620,11 @@
                         </div>
 
                         <div class="flavor-section">
-                            <span class="flavor-label">Available Flavors</span>
+                            <span class="flavor-label">Select Flavor</span>
                             <div class="flavor-options">
-                                <span class="flavor-tag">Mango</span>
-                                <span class="flavor-tag">Mix Berry</span>
-                                <span class="flavor-tag">Pink Guava</span>
+                                <span class="flavor-tag selectable active" data-image="assets/images/products/preworkout-mango-200gm.jpg">Mango</span>
+                                <span class="flavor-tag selectable" data-image="assets/images/products/preworkout-pinkguava-200gm.jpg">Mix Berry</span>
+                                <span class="flavor-tag selectable" data-image="assets/images/products/preworkout-pinkguava-200gm.jpg">Pink Guava</span>
                             </div>
                         </div>
 
@@ -610,7 +635,7 @@
                 <!-- Pre-Workout 100gm Travel Pack -->
                 <div class="product-card" data-category="performance">
                     <div class="product-image">
-                        <img src="assets/images/products/preworkout-mixberries-100gm.jpg" alt="Pre-Workout Travel Pack">
+                        <img src="assets/images/products/preworkout-mixberries-100gm.jpg" alt="Pre-Workout Travel Pack" class="product-img">
                         <span class="product-badge">Travel Pack</span>
                     </div>
                     <div class="product-info">
@@ -625,10 +650,10 @@
                         </div>
 
                         <div class="flavor-section">
-                            <span class="flavor-label">Available Flavors</span>
+                            <span class="flavor-label">Select Flavor</span>
                             <div class="flavor-options">
-                                <span class="flavor-tag">Mix Berries</span>
-                                <span class="flavor-tag">Pink Guava</span>
+                                <span class="flavor-tag selectable active" data-image="assets/images/products/preworkout-mixberries-100gm.jpg">Mix Berries</span>
+                                <span class="flavor-tag selectable" data-image="assets/images/products/preworkout-pinkguava-100gm.jpg">Pink Guava</span>
                             </div>
                         </div>
 
@@ -925,5 +950,35 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Flavor Image Switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const flavorTags = document.querySelectorAll('.flavor-tag.selectable');
+
+            flavorTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    const card = this.closest('.product-card');
+                    const productImg = card.querySelector('.product-img');
+                    const newImageSrc = this.dataset.image;
+
+                    // Remove active class from siblings
+                    const siblings = this.parentElement.querySelectorAll('.flavor-tag.selectable');
+                    siblings.forEach(sib => sib.classList.remove('active'));
+
+                    // Add active class to clicked tag
+                    this.classList.add('active');
+
+                    // Animate image change
+                    if (productImg && newImageSrc) {
+                        productImg.classList.add('switching');
+                        setTimeout(() => {
+                            productImg.src = newImageSrc;
+                            productImg.classList.remove('switching');
+                        }, 150);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
