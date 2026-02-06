@@ -264,8 +264,10 @@ const Animations = {
 
 /**
  * Enquire Button Handler
+ * Note: WhatsApp and Instagram buttons are handled in products.html
+ * This only handles generic enquire buttons that should go to contact page
  */
-document.querySelectorAll('.enquire-btn, .btn-enquire').forEach(btn => {
+document.querySelectorAll('.btn-enquire').forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
 
