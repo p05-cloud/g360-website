@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="G360 Warriors - Real transformations, real results. See success stories from the G360 fitness community.">
+    <meta name="keywords" content="G360 Warriors, Fitness Transformations, Success Stories, Testimonials, Before After">
+    <title>G360 Warriors - Transformations & Success Stories</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Warriors Page Specific Styles */
+        .warriors-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .warriors-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/images/swami.jpg') center center no-repeat;
+            background-size: auto 120%;
+            opacity: 0.1;
+            filter: sepia(100%) saturate(300%) brightness(80%) hue-rotate(10deg);
+        }
+
+        .warriors-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .warriors-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--bg-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .warriors-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+        }
+
+        .warriors-title .highlight {
+            color: var(--gold);
+        }
+
+        .warriors-description {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Stats Banner */
+        .warriors-stats {
+            background: var(--bg-secondary);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item-warriors {
+            text-align: center;
+        }
+
+        .stat-item-warriors .number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .stat-item-warriors .label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+        }
+
+        /* Video Testimonials Section */
+        .video-section {
+            padding: 80px 0;
+            background: var(--bg-primary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header .label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--electric-blue);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+        }
+
+        .section-header h2 .gold {
+            color: var(--gold);
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 1rem auto 0;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+        }
+
+        .video-placeholder svg {
+            width: 60px;
+            height: 60px;
+            fill: var(--gold);
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-info h4 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .review-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .review-card::before {
+            content: '"';
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 4rem;
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        .review-stars {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            color: var(--text-gray);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--electric-blue) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: var(--bg-primary);
+        }
+
+        .review-author-info h5 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .review-author-info span {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .review-date {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-top: 1rem;
+            opacity: 0.7;
+        }
+
+        /* Write Review Section */
+        .write-review-section {
+            padding: 80px 0;
+            background: var(--bg-primary);
+        }
+
+        .review-form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--electric-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text-white);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Star Rating Input */
+        .star-rating {
+            display: flex;
+            gap: 0.5rem;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            cursor: pointer;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.2);
+            transition: color 0.2s;
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: var(--gold);
+        }
+
+        .submit-review-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 10px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-review-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .form-note {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message svg {
+            width: 80px;
+            height: 80px;
+            fill: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .success-message h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+
+        .success-message p {
+            color: var(--text-gray);
+        }
+
+        @media (max-width: 768px) {
+            .stats-row {
+                gap: 2rem;
+            }
+            .stat-item-warriors .number {
+                font-size: 2rem;
+            }
+            .review-form-container {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-g">G</span><span class="logo-360">360</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="warriors.html" class="nav-link active">Warriors</a></li>
+                <li><a href="brands.html" class="nav-link">Brands</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="warriors-hero">
+        <div class="warriors-hero-content">
+            <span class="warriors-badge">Real People. Real Results.</span>
+            <h1 class="warriors-title">G360 <span class="highlight">Warriors</span></h1>
+            <p class="warriors-description">
+                Every transformation tells a story of dedication, discipline, and determination.
+                Meet the warriors who trusted G360 and achieved extraordinary results.
+                Your journey could be next.
+            </p>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="warriors-stats">
+        <div class="container">
+            <div class="stats-row">
+                <div class="stat-item-warriors">
+                    <div class="number">500+</div>
+                    <div class="label">Transformations</div>
+                </div>
+                <div class="stat-item-warriors">
+                    <div class="number">20+</div>
+                    <div class="label">Years Experience</div>
+                </div>
+                <div class="stat-item-warriors">
+                    <div class="number">100%</div>
+                    <div class="label">Dedication</div>
+                </div>
+                <div class="stat-item-warriors">
+                    <div class="number">∞</div>
+                    <div class="label">Belief in Karma</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Video Testimonials</span>
+                <h2>Watch Their <span class="gold">Journey</span></h2>
+                <p>Real stories from real warriors who transformed their lives with G360</p>
+            </div>
+
+            <div class="video-grid">
+                <!-- Video 1 - Placeholder -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <div class="video-placeholder">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <span>Video Coming Soon</span>
+                        </div>
+                        <!-- Replace with YouTube embed: -->
+                        <!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
+                    </div>
+                    <div class="video-info">
+                        <h4>Transformation Story #1</h4>
+                        <p>Coming soon...</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 - Placeholder -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <div class="video-placeholder">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <span>Video Coming Soon</span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Transformation Story #2</h4>
+                        <p>Coming soon...</p>
+                    </div>
+                </div>
+
+                <!-- Video 3 - Placeholder -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <div class="video-placeholder">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <span>Video Coming Soon</span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Transformation Story #3</h4>
+                        <p>Coming soon...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Customer Reviews</span>
+                <h2>What Warriors <span class="gold">Say</span></h2>
+                <p>Honest feedback from our G360 community</p>
+            </div>
+
+            <div class="reviews-grid" id="reviews-container">
+                <!-- Sample Review 1 -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "The Pre-Workout is absolutely amazing! Gives me the energy I need for intense sessions.
+                        Prakash sir's guidance combined with Power Storm products changed my fitness game completely."
+                    </p>
+                    <div class="review-author">
+                        <div class="review-avatar">RK</div>
+                        <div class="review-author-info">
+                            <h5>Rahul Kumar</h5>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="review-date">January 2026</div>
+                </div>
+
+                <!-- Sample Review 2 -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Best whey protein I've ever used. No bloating, mixes perfectly, and the Malai Kulfi flavor
+                        is incredible! Lost 12kg in 3 months with proper diet and these supplements."
+                    </p>
+                    <div class="review-author">
+                        <div class="review-avatar">PS</div>
+                        <div class="review-author-info">
+                            <h5>Priya Sharma</h5>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="review-date">December 2025</div>
+                </div>
+
+                <!-- Sample Review 3 -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Started my fitness journey with G360 6 months ago. The products are top quality and
+                        Prakash sir's 'Believe in Karma' philosophy keeps me motivated. Highly recommended!"
+                    </p>
+                    <div class="review-author">
+                        <div class="review-avatar">AM</div>
+                        <div class="review-author-info">
+                            <h5>Amit Mehta</h5>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                    <div class="review-date">November 2025</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Write Review Section -->
+    <section class="write-review-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Share Your Experience</span>
+                <h2>Write a <span class="gold">Review</span></h2>
+                <p>Your feedback helps others in their fitness journey</p>
+            </div>
+
+            <div class="review-form-container">
+                <form id="review-form">
+                    <div class="form-group">
+                        <label>Your Name *</label>
+                        <input type="text" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email (won't be published) *</label>
+                        <input type="email" name="email" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Product Purchased</label>
+                        <select name="product">
+                            <option value="">Select a product (optional)</option>
+                            <option value="Isolate Whey Protein">Isolate Whey Protein</option>
+                            <option value="Whey Blend">Whey Blend</option>
+                            <option value="Nitro Whey">Nitro Whey</option>
+                            <option value="Whey Diet">Whey Diet</option>
+                            <option value="Pre-Workout">Pre-Workout</option>
+                            <option value="BCAA">BCAA</option>
+                            <option value="EAA">EAA</option>
+                            <option value="Creatine">Creatine</option>
+                            <option value="Other">Other Product</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Rating *</label>
+                        <div class="star-rating">
+                            <input type="radio" name="rating" value="5" id="star5" required>
+                            <label for="star5">★</label>
+                            <input type="radio" name="rating" value="4" id="star4">
+                            <label for="star4">★</label>
+                            <input type="radio" name="rating" value="3" id="star3">
+                            <label for="star3">★</label>
+                            <input type="radio" name="rating" value="2" id="star2">
+                            <label for="star2">★</label>
+                            <input type="radio" name="rating" value="1" id="star1">
+                            <label for="star1">★</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Review *</label>
+                        <textarea name="review" placeholder="Share your experience with G360 products..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-review-btn">Submit Review</button>
+
+                    <p class="form-note">
+                        Your review will be visible after approval. Thank you for your feedback!
+                    </p>
+                </form>
+
+                <div class="success-message" id="success-message">
+                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    <h3>Thank You!</h3>
+                    <p>Your review has been submitted successfully. It will appear after approval.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content" style="text-align: center;">
+                <h2 style="font-family: 'Cinzel', serif; font-size: 2rem; margin-bottom: 1rem;">Ready to Become a Warrior?</h2>
+                <p style="color: var(--text-gray); margin-bottom: 2rem;">
+                    Start your transformation journey with G360 today.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="products.html" class="btn btn-primary">Shop Products</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-g">G</span><span class="logo-360">360</span>
+                    </a>
+                    <p class="footer-tagline">Guru 360 - Complete Fitness Philosophy</p>
+                    <p class="footer-philosophy">"Believe in Karma"</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="warriors.html">Warriors</a></li>
+                        <li><a href="brands.html">Brands</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>For inquiries and collaborations:</p>
+                    <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 G360 - Guru 360. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Review Form Handler
+        const WHATSAPP_NUMBER = '918655850932';
+
+        document.getElementById('review-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const form = this;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+
+            // Build WhatsApp message with review
+            let message = `🌟 *NEW REVIEW SUBMISSION*\n\n`;
+            message += `*Name:* ${data.name}\n`;
+            message += `*Email:* ${data.email}\n`;
+            message += `*Product:* ${data.product || 'Not specified'}\n`;
+            message += `*Rating:* ${'★'.repeat(data.rating)}${'☆'.repeat(5-data.rating)}\n\n`;
+            message += `*Review:*\n${data.review}`;
+
+            // Send to WhatsApp
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+            // Show success message
+            form.style.display = 'none';
+            document.getElementById('success-message').classList.add('show');
+
+            // Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
