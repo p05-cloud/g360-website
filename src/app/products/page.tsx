@@ -36,14 +36,15 @@ const categories = [
 /* ─── Product data ──────────────────────────────────────── */
 
 const products: Product[] = [
+  // ==================== PROTEIN ====================
   {
     id: 1,
     name: "Isolate Whey Protein",
     category: "protein",
     badge: "Premium",
     description:
-      "Ultra-pure whey protein isolate with rapid absorption for serious athletes. High protein per scoop, low carb and fat.",
-    prices: [{ size: "2KG", price: "8,700" }],
+      "26g protein from 100% grass-fed whey isolate with 5.7g BCAAs, 4.1g Glutamic Acid. No sugar, instantized, gluten-free.",
+    prices: [{ size: "2 KG", price: "8,700" }],
     flavors: [
       { name: "American Icecream", image: "/images/products/isolate-whey-icecream.jpg" },
       { name: "Chocolate", image: "/images/products/isolate-whey-chocolate.jpg" },
@@ -53,13 +54,13 @@ const products: Product[] = [
   },
   {
     id: 2,
-    name: "Whey Blend",
+    name: "Whey Blend Protein",
     category: "protein",
     description:
-      "A versatile blend of whey concentrate and isolate for everyday muscle recovery and lean gains.",
+      "24g protein concentrate & isolate blend. Just 2.9g carbs and 0.7g fats. Perfect for low carb, low fat diets.",
     prices: [
-      { size: "1KG", price: "3,800" },
-      { size: "2KG", price: "7,000" },
+      { size: "1 KG", price: "3,800" },
+      { size: "2 KG", price: "7,000" },
     ],
     flavors: [
       { name: "Chocolate", image: "/images/products/whey-blend-chocolate.jpg" },
@@ -72,14 +73,14 @@ const products: Product[] = [
   },
   {
     id: 3,
-    name: "Nitro Whey",
+    name: "Nitro Whey Protein",
     category: "protein",
     badge: "Popular",
     description:
-      "Nitrogen-boosted whey protein for explosive recovery and muscle growth. Fan-favourite formula.",
+      "30g protein with L-Arginine, Creatine Monohydrate & Digestive Enzymes. 6.3g BCAA, 0.56g L-Arginine, 3g Creatine per serving.",
     prices: [
-      { size: "1KG", price: "4,000" },
-      { size: "2KG", price: "7,300" },
+      { size: "1 KG", price: "4,000" },
+      { size: "2 KG", price: "7,300" },
     ],
     flavors: [
       { name: "Chocolate", image: "/images/products/nitro-whey-chocolate.jpg" },
@@ -90,13 +91,13 @@ const products: Product[] = [
   },
   {
     id: 4,
-    name: "Whey Diet",
+    name: "Whey Diet Protein",
     category: "protein",
     description:
-      "Low-calorie whey protein formulated for lean muscle while supporting fat loss. Ideal for cutting phases.",
+      "Premium high protein blend with L-Carnitine & digestive enzymes. 26g protein, 150mg Green Tea, 500mg CLA, 500mg Garcinia Cambogia.",
     prices: [
-      { size: "1KG", price: "3,800" },
-      { size: "2KG", price: "7,500" },
+      { size: "1 KG", price: "3,800" },
+      { size: "2 KG", price: "7,500" },
     ],
     flavors: [
       { name: "American Icecream", image: "/images/products/whey-diet-icecream.jpg" },
@@ -107,14 +108,14 @@ const products: Product[] = [
   },
   {
     id: 5,
-    name: "Pure Gain",
+    name: "Pure Gain Mass Gainer",
     category: "protein",
     badge: "Gainer",
     description:
-      "High-calorie mass gainer with quality carbs and protein for hard-gainers looking to bulk up.",
+      "327 kcal energy, 60g carbs, 1g Tribulus, 3g Creatine per serving. Premium weight gain formula with digestive enzymes.",
     prices: [
-      { size: "1KG", price: "1,800" },
-      { size: "3KG", price: "4,800" },
+      { size: "1 KG", price: "1,800" },
+      { size: "3 KG", price: "4,800" },
     ],
     flavors: [
       { name: "Chocolate", image: "/images/products/pure-gain-chocolate-promo.jpg" },
@@ -123,13 +124,14 @@ const products: Product[] = [
       { name: "American Icecream", image: "/images/products/pure-gain-1kg-icecream-promo.jpg" },
     ],
   },
+  // ==================== AMINO ACIDS ====================
   {
     id: 6,
     name: "EAA Complex",
     category: "amino",
     badge: "Essential",
     description:
-      "Complete Essential Amino Acid complex for enhanced recovery, endurance and muscle protein synthesis.",
+      "6.5g EAA, 500mg Citrulline, 500mg Taurine, 1g Glutamine. Essential Amino Acid Blend - Power up your performance!",
     prices: [{ size: "250g", price: "2,500" }],
     flavors: [
       { name: "Mix Berry", image: "/images/products/eaa-mixberry-promo.jpg" },
@@ -142,44 +144,93 @@ const products: Product[] = [
     name: "BCAA 2:1:1",
     category: "amino",
     description:
-      "Branched-Chain Amino Acids in the clinically-studied 2:1:1 ratio for intra-workout recovery.",
-    prices: [{ size: "250g", price: "2,500" }],
+      "6g high quality BCAA in ideal 2:1:1 ratio. Boosts energy, reduces muscle fatigue and aids recovery post intense activity.",
+    prices: [{ size: "250g", price: "2,300" }],
     image: "/images/products/bcaa.png",
+    flavors: [
+      { name: "Mix Berry" },
+      { name: "Mango" },
+      { name: "Watermelon" },
+    ],
   },
   {
     id: 8,
-    name: "L-Carnitine",
+    name: "L-Leucine",
     category: "amino",
     description:
-      "Supports fat metabolism and energy production. Turn stored fat into usable fuel during workouts.",
-    prices: [{ size: "100g", price: "1,500" }],
-    image: "/images/products/l-carnitine.jpg",
+      "Essential amino acid for protein synthesis. 3000mg L-Leucine per serving. Boosts energy and enhances athletic performance.",
+    prices: [{ size: "100g", price: "800" }],
+    image: "/images/products/l-leucine.jpg",
+    flavors: [{ name: "Unflavoured" }],
   },
   {
     id: 9,
     name: "L-Glutamine",
     category: "amino",
     description:
-      "Pure glutamine for gut health, immune support and reduced muscle soreness after intense training.",
-    prices: [{ size: "250g", price: "1,800" }],
+      "Key amino acid for muscle growth & recovery. 5000mg L-Glutamine per serving. Boosts energy and enhances athletic performance.",
+    prices: [
+      { size: "100g", price: "800" },
+      { size: "300g", price: "2,400" },
+    ],
     image: "/images/products/l-glutamine.jpg",
+    flavors: [{ name: "Unflavoured" }],
   },
   {
     id: 10,
-    name: "Pre-Workout",
+    name: "L-Carnitine 3000mg",
+    category: "amino",
+    description:
+      "3000mg L-Carnitine per 15ml serving. 31 servings per bottle. Helps transport fatty acids to mitochondria for energy, aids weight loss.",
+    prices: [{ size: "475ml", price: "2,500" }],
+    flavors: [
+      { name: "Orange", image: "/images/products/l-carnitine-orange.jpg" },
+    ],
+  },
+  // ==================== PERFORMANCE ====================
+  {
+    id: 11,
+    name: "Pre-Workout 400gm",
     category: "performance",
     badge: "Energy",
     description:
       "Explosive energy, laser focus, and skin-splitting pumps. Engineered for maximum workout intensity.",
-    prices: [{ size: "300g", price: "3,100" }],
+    prices: [{ size: "400g", price: "3,100" }],
     flavors: [
-      { name: "Mango Mojito", image: "/images/products/pre-workout-mango-mojito.jpg" },
-      { name: "Mix Berry", image: "/images/products/pre-workout-mixberry.jpg" },
-      { name: "Watermelon", image: "/images/products/pre-workout-watermelon.jpg" },
+      { name: "Mango Crush", image: "/images/products/preworkout-mango-400gm-clean.jpg" },
+      { name: "Watermelon", image: "/images/products/preworkout-watermelon-400gm.jpg" },
+      { name: "Mix Berries", image: "/images/products/preworkout-mixberries-400gm.jpg" },
+      { name: "Strawberry", image: "/images/products/preworkout-strawberry-400gm-clean.jpg" },
+      { name: "Pineapple", image: "/images/products/preworkout-pineapple-400gm.jpg" },
     ],
   },
   {
-    id: 11,
+    id: 12,
+    name: "Pre-Workout 200gm",
+    category: "performance",
+    description:
+      "Same explosive formula in a compact 200gm size. Perfect for trying new flavors.",
+    prices: [{ size: "200g", price: "1,700" }],
+    flavors: [
+      { name: "Mango", image: "/images/products/preworkout-mango-200gm.jpg" },
+      { name: "Mix Berry", image: "/images/products/preworkout-pinkguava-200gm.jpg" },
+      { name: "Pink Guava", image: "/images/products/preworkout-pinkguava-200gm.jpg" },
+    ],
+  },
+  {
+    id: 13,
+    name: "Pre-Workout Travel Pack",
+    category: "performance",
+    description:
+      "On-the-go pre-workout energy. Compact 100gm travel-friendly pack for workouts anywhere.",
+    prices: [{ size: "100g", price: "900" }],
+    flavors: [
+      { name: "Mix Berries", image: "/images/products/preworkout-mixberries-100gm.jpg" },
+      { name: "Pink Guava", image: "/images/products/preworkout-pinkguava-100gm.jpg" },
+    ],
+  },
+  {
+    id: 14,
     name: "Pure Creatine",
     category: "performance",
     description:
@@ -188,22 +239,41 @@ const products: Product[] = [
       { size: "250g", price: "1,800" },
       { size: "100g", price: "800" },
     ],
-    image: "/images/products/pure-creatine-250g.jpg",
+    image: "/images/products/pure-creatine.jpg",
   },
   {
-    id: 12,
-    name: "Recharge",
+    id: 15,
+    name: "Recharge Electrolyte",
     category: "performance",
     description:
       "Electrolyte and hydration formula to replenish minerals lost during intense training sessions.",
     prices: [{ size: "500g", price: "650" }],
     flavors: [
-      { name: "Orange", image: "/images/products/recharge-orange.jpg" },
-      { name: "Lemon", image: "/images/products/recharge-lemon.jpg" },
+      { name: "Mango", image: "/images/products/recharge-mango.jpg" },
+      { name: "Lime Mojito", image: "/images/products/recharge-mojito.jpg" },
     ],
   },
+  // ==================== HEALTH & WELLNESS ====================
   {
-    id: 13,
+    id: 16,
+    name: "Testo Booster",
+    category: "health",
+    description:
+      "Natural testosterone support formula for enhanced strength, energy and vitality.",
+    prices: [{ size: "60 caps", price: "2,500" }],
+    image: "/images/products/testo-booster.jpg",
+  },
+  {
+    id: 17,
+    name: "Gainz",
+    category: "health",
+    description:
+      "Advanced muscle gain support formula for maximising your training results.",
+    prices: [{ size: "60 caps", price: "1,500" }],
+    image: "/images/products/gainz-promo.jpg",
+  },
+  {
+    id: 18,
     name: "Fat Burner",
     category: "health",
     description:
@@ -212,22 +282,58 @@ const products: Product[] = [
     image: "/images/products/fat-burner.jpg",
   },
   {
-    id: 14,
-    name: "Omega-3",
-    category: "health",
-    description:
-      "High-potency fish oil softgels for heart health, joint support and cognitive function.",
-    prices: [{ size: "60 softgels", price: "900" }],
-    image: "/images/products/omega-3.jpg",
-  },
-  {
-    id: 15,
+    id: 19,
     name: "Multivitamins",
     category: "health",
     description:
       "Complete daily multivitamin and mineral complex to fill nutritional gaps and support overall wellness.",
     prices: [{ size: "60 tablets", price: "1,200" }],
     image: "/images/products/multivitamins.jpg",
+  },
+  {
+    id: 20,
+    name: "Omega-3 Fish Oil",
+    category: "health",
+    description:
+      "High-potency fish oil softgels for heart health, joint support and cognitive function.",
+    prices: [{ size: "60 softgels", price: "900" }],
+    image: "/images/products/omega3-fishoil.jpg",
+  },
+  {
+    id: 21,
+    name: "Calcium",
+    category: "health",
+    description:
+      "Essential calcium supplement for strong bones, teeth and muscle function.",
+    prices: [{ size: "60 tablets", price: "600" }],
+    image: "/images/products/multivitamins.png",
+  },
+  {
+    id: 22,
+    name: "Digestive Enzymes",
+    category: "health",
+    description:
+      "Complete digestive enzyme complex for improved nutrient absorption and gut health.",
+    prices: [{ size: "60 caps", price: "800" }],
+    image: "/images/products/multivitamins.png",
+  },
+  {
+    id: 23,
+    name: "Peanut Butter",
+    category: "health",
+    description:
+      "High protein natural peanut butter. Great source of healthy fats and energy for athletes.",
+    prices: [{ size: "1 KG", price: "600" }],
+    image: "/images/products/pure-gain.png",
+  },
+  {
+    id: 24,
+    name: "High Protein Oats",
+    category: "health",
+    description:
+      "Protein-enriched oats for a powerful breakfast. Fuel your day with sustained energy.",
+    prices: [{ size: "1 KG", price: "800" }],
+    image: "/images/products/pure-gain.png",
   },
 ];
 
