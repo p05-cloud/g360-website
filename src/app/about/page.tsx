@@ -124,18 +124,6 @@ const stats = [
 // Team Data
 // ============================================
 
-const teamMembers = [
-  {
-    name: "Prakash More",
-    role: "Founder & Head Coach",
-    image: "/images/hero/prakash-more.png",
-    isFounder: true,
-  },
-  { name: "Coming Soon", role: "Team Member", image: null, isFounder: false },
-  { name: "Coming Soon", role: "Team Member", image: null, isFounder: false },
-  { name: "Coming Soon", role: "Team Member", image: null, isFounder: false },
-];
-
 // ============================================
 // Page Component
 // ============================================
@@ -370,110 +358,6 @@ export default function AboutPage() {
                 </span>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ==================== TEAM SECTION ==================== */}
-      <section className="relative py-20 md:py-28">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050d18] via-[#0a1628] to-[#050d18]" />
-
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Section header */}
-          <motion.div
-            className="mx-auto mb-6 max-w-2xl text-center"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <span className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-[#00d4ff]">
-              The Team
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">
-              G360 Family
-            </h2>
-          </motion.div>
-          <motion.p
-            className="mx-auto mb-14 max-w-2xl text-center text-gray-400"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            Behind every great movement is a dedicated team. The G360 family is growing,
-            and together we are building a community of warriors committed to excellence in
-            fitness and life.
-          </motion.p>
-
-          {/* Team grid */}
-          <motion.div
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {teamMembers.map((member, i) => (
-              <motion.div
-                key={`${member.name}-${i}`}
-                variants={fadeInUp}
-                custom={i}
-                className={`group flex flex-col items-center overflow-hidden rounded-xl p-6 text-center transition-all duration-300 ${
-                  member.isFounder
-                    ? "border-2 border-[#d4af37]/50 bg-gradient-to-b from-[#0f1d2e] to-[#142438] shadow-lg shadow-[#d4af37]/10"
-                    : "border border-dashed border-gray-600/50 bg-[#0f1d2e]/50"
-                }`}
-              >
-                {member.image ? (
-                  <div className="relative mb-4 h-32 w-32 overflow-hidden rounded-full border-2 border-[#d4af37]/40">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover object-top"
-                    />
-                  </div>
-                ) : (
-                  <div className="mb-4 flex h-32 w-32 items-center justify-center rounded-full border border-dashed border-gray-600/50 bg-[#0a1628]">
-                    <span className="text-4xl text-gray-600">{"\uD83D\uDC64"}</span>
-                  </div>
-                )}
-
-                <h3
-                  className={`font-display text-lg font-bold ${
-                    member.isFounder ? "text-[#d4af37]" : "text-gray-500"
-                  }`}
-                >
-                  {member.name}
-                </h3>
-                <p className="mt-1 text-sm text-gray-400">{member.role}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Join CTA Box */}
-          <motion.div
-            className="mx-auto mt-16 max-w-2xl rounded-2xl border border-[#d4af37]/20 bg-gradient-to-r from-[#0f1d2e] to-[#142438] p-8 text-center sm:p-10"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <h3 className="font-display text-2xl font-bold text-white">
-              Want to Join the G360 Family?
-            </h3>
-            <p className="mt-3 text-gray-400">
-              We are always looking for passionate individuals who share our vision for
-              fitness excellence and community building.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-6 inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#d4af37] to-[#e8c84a] px-8 py-3 text-sm font-bold uppercase tracking-wider text-[#050d18] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#d4af37]/25"
-            >
-              Get in Touch
-            </Link>
           </motion.div>
         </div>
       </section>
