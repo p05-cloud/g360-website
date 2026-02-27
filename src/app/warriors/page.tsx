@@ -103,6 +103,7 @@ interface Athlete {
   photo: string;
   roles: string[];
   specializations: string[];
+  bio: string;
   zone?: string;
   isFeatured?: boolean;
   category: AthleteCategory[];
@@ -124,6 +125,7 @@ const athletes: Athlete[] = [
     photo: "/images/team/pratik-mohite.jpeg",
     roles: ["IBBF Athlete", "Divyang Champion"],
     specializations: ["Coach", "Diet Consultant"],
+    bio: "IBBF-recognized Divyang athlete who proves that true strength knows no boundaries. As a certified coach and diet consultant, Pratik inspires the entire G360 family with unmatched discipline and determination.",
     isFeatured: true,
     category: ["all", "ibbf", "coach", "athlete"],
   },
@@ -133,6 +135,7 @@ const athletes: Athlete[] = [
     photo: "/images/team/pratik-lokhande.jpeg",
     roles: ["Influencer", "Transformation Specialist"],
     specializations: [],
+    bio: "Social media influencer and transformation specialist driving fitness culture in Khopoli. As Zonal Head, Pratik leads by example and builds champions in his community.",
     zone: "Khopoli",
     category: ["all", "zonal-head", "coach"],
   },
@@ -142,6 +145,7 @@ const athletes: Athlete[] = [
     photo: "/images/team/yash-bhutade.jpeg",
     roles: ["Fitness Model"],
     specializations: ["Marketing Expert"],
+    bio: "Fitness model and marketing expert bringing the Power Storm brand to life. His aesthetic physique and creative vision help connect athletes with the G360 mission.",
     category: ["all", "fitness-model"],
   },
   {
@@ -150,6 +154,7 @@ const athletes: Athlete[] = [
     photo: "/images/team/sandeep-rane.jpeg",
     roles: ["Fitness Expert"],
     specializations: [],
+    bio: "Seasoned fitness expert leading the G360 movement across Kalyan to Karjat. As Zonal Head, Sandeep brings years of practical coaching experience to every athlete he mentors.",
     zone: "Kalyan to Karjat",
     category: ["all", "zonal-head", "coach"],
   },
@@ -159,6 +164,7 @@ const athletes: Athlete[] = [
     photo: "/images/team/vinit-kotian.jpeg",
     roles: ["Fitness Coach", "Nutrition Consultant"],
     specializations: [],
+    bio: "Certified fitness coach and nutrition consultant overseeing the Thane region. Vinit combines science-backed training programs with personalised diet plans to deliver real results.",
     zone: "Thane Region",
     category: ["all", "zonal-head", "coach"],
   },
@@ -168,6 +174,7 @@ const athletes: Athlete[] = [
     photo: "/images/team/john-sale.jpeg",
     roles: ["IBBF Athlete", "Coach"],
     specializations: [],
+    bio: "IBBF-level competitive athlete and experienced coach with deep knowledge of competition prep and training science. A cornerstone of the G360 coaching team.",
     category: ["all", "ibbf", "coach", "athlete"],
   },
   {
@@ -176,6 +183,7 @@ const athletes: Athlete[] = [
     photo: "/images/team/dinesh-rokde.jpeg",
     roles: ["Senior Fitness Coach"],
     specializations: [],
+    bio: "Senior fitness coach with years of experience in strength training and body conditioning. Dinesh is known for his hands-on coaching style and ability to push athletes to their peak.",
     category: ["all", "coach"],
   },
   {
@@ -184,6 +192,7 @@ const athletes: Athlete[] = [
     photo: "/images/team/sukoon-halanley.jpeg",
     roles: ["Senior Fitness Coach"],
     specializations: ["Nutrition Consultant"],
+    bio: "Senior fitness coach and nutrition consultant who takes a holistic approach to athlete development. His expertise in both training and diet makes him a trusted guide for transformations.",
     category: ["all", "coach"],
   },
   {
@@ -192,15 +201,17 @@ const athletes: Athlete[] = [
     photo: "/images/team/shrikant-sontakke.jpeg",
     roles: ["Senior Fitness Consultant"],
     specializations: ["Nutrition Consultant"],
+    bio: "Senior fitness and nutrition consultant heading the G360 operations in Solapur. Shrikant brings deep expertise in personalised coaching and has guided numerous successful transformations.",
     zone: "Solapur",
     category: ["all", "zonal-head", "coach"],
   },
   {
-    id: "xyz-athlete",
-    name: "XYZ",
-    photo: "/images/team/xyz-athlete.jpeg",
+    id: "shekhar-patharikar",
+    name: "Shekhar Patharikar",
+    photo: "/images/team/shekhar-patharikar.jpeg",
     roles: ["Senior Fitness Coach"],
     specializations: ["Nutrition Consultant"],
+    bio: "Experienced senior fitness coach and nutrition consultant dedicated to holistic athlete development. His balanced approach to training and diet helps clients achieve sustainable, long-term results.",
     category: ["all", "coach"],
   },
   {
@@ -209,6 +220,7 @@ const athletes: Athlete[] = [
     photo: "/images/team/wasim-pathan.jpeg",
     roles: ["Fitness Coach", "Transformation Specialist"],
     specializations: [],
+    bio: "Fitness coach and transformation specialist leading the G360 presence in Akkalkot. Wasim specialises in body recomposition and has helped countless clients achieve their dream physique.",
     zone: "Akkalkot",
     category: ["all", "zonal-head", "coach"],
   },
@@ -218,6 +230,7 @@ const athletes: Athlete[] = [
     photo: "/images/team/subhan-naik.jpeg",
     roles: ["Athlete", "Fitness Model"],
     specializations: [],
+    bio: "Competitive athlete and fitness model with an impressive physique that represents the G360 standard. His dedication to training and discipline inspires the next generation of warriors.",
     category: ["all", "fitness-model", "athlete"],
   },
   {
@@ -226,6 +239,7 @@ const athletes: Athlete[] = [
     photo: "/images/team/satish-kyar.jpeg",
     roles: ["Athlete"],
     specializations: [],
+    bio: "Dedicated G360 athlete committed to consistent growth and peak performance. Satish embodies the warrior mindset through daily discipline and relentless hard work.",
     category: ["all", "athlete"],
   },
   {
@@ -234,6 +248,7 @@ const athletes: Athlete[] = [
     photo: "/images/team/najim-maniyar.jpeg",
     roles: ["Athlete"],
     specializations: [],
+    bio: "Passionate athlete focused on building strength and pushing physical limits. Najim represents the G360 warrior spirit with his consistent training and determination to excel.",
     category: ["all", "athlete"],
   },
   {
@@ -242,6 +257,7 @@ const athletes: Athlete[] = [
     photo: "/images/team/mahesh-irwadkar.jpeg",
     roles: ["Powerlifter", "Athlete"],
     specializations: [],
+    bio: "Competitive powerlifter and dedicated athlete who leads by raw strength. His commitment to heavy lifting and disciplined training embodies the warrior ethos of G360.",
     category: ["all", "athlete"],
   },
 ];
@@ -293,6 +309,11 @@ function AthleteCard({ athlete }: { athlete: Athlete }) {
         <h3 className="font-display text-lg font-bold tracking-wide text-white">
           {athlete.name}
         </h3>
+
+        {/* Bio */}
+        <p className="text-sm leading-relaxed text-gray-400">
+          {athlete.bio}
+        </p>
 
         {/* Role badges (gold) */}
         <div className="flex flex-wrap gap-1.5">
@@ -752,14 +773,9 @@ export default function WarriorsPage() {
                   ))}
                 </div>
 
-                {/* Inspirational text */}
+                {/* Bio */}
                 <p className="text-base leading-relaxed text-gray-300">
-                  Pratik Mohite embodies the true G360 warrior spirit. As an
-                  IBBF-recognized Divyang (differently-abled) athlete, certified
-                  coach, and diet consultant, he has transformed what others see as
-                  limitations into the foundation of extraordinary strength. His
-                  journey inspires every member of the G360 family to push beyond
-                  boundaries.
+                  {featuredAthlete.bio}
                 </p>
 
                 {/* Specialization badges */}
