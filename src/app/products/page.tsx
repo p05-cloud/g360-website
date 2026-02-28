@@ -249,10 +249,10 @@ const products: Product[] = [
       "Hydrates faster than water. Packed with 126 kcal energy, 250mg BCAA, 300mg L-Glutamine, and 300mg Beta Alanine for peak performance and rapid recovery.",
     prices: [{ size: "1 KG", price: "650" }],
     flavors: [
-      { name: "Cola", image: "/images/products/recharge-cola.jpg" },
       { name: "Mango", image: "/images/products/recharge-mango.jpg" },
       { name: "Mojito", image: "/images/products/recharge-mojito.jpg" },
-      { name: "Pineapple", image: "/images/products/recharge-pineapple.jpg" },
+      { name: "Cola" },
+      { name: "Pineapple" },
     ],
   },
   // ==================== HEALTH & WELLNESS ====================

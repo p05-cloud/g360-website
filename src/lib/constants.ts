@@ -287,10 +287,10 @@ export const PRODUCTS: Product[] = [
     highlights: ["Hydrates Faster Than Water", "126 kcal Energy", "250mg BCAA", "300mg L-Glutamine & Beta Alanine"],
     prices: [{ size: "1 KG", price: 650 }],
     flavors: [
-      { name: "Cola", image: "/images/products/recharge-cola.jpg" },
       { name: "Mango", image: "/images/products/recharge-mango.jpg" },
       { name: "Mojito", image: "/images/products/recharge-mojito.jpg" },
-      { name: "Pineapple", image: "/images/products/recharge-pineapple.jpg" },
+      { name: "Cola", image: "/images/products/recharge-mango.jpg" },
+      { name: "Pineapple", image: "/images/products/recharge-mango.jpg" },
     ],
     defaultImage: "/images/products/recharge-mango.jpg",
   },

@@ -57,7 +57,6 @@ interface Athlete {
   specializations: string[];
   bio: string;
   zone?: string;
-  isFeatured?: boolean;
   category: AthleteCategory[];
 }
 
@@ -71,6 +70,7 @@ const filterCategories: { key: AthleteCategory; label: string }[] = [
 ];
 
 const athletes: Athlete[] = [
+  // --- IBBF Athletes & Key Leaders ---
   {
     id: "pratik-mohite",
     name: "Pratik Mohite",
@@ -78,9 +78,27 @@ const athletes: Athlete[] = [
     roles: ["IBBF Athlete", "Divyang Champion"],
     specializations: ["Coach", "Diet Consultant"],
     bio: "IBBF-recognized Divyang athlete who proves that true strength knows no boundaries. As a certified coach and diet consultant, Pratik inspires the entire G360 family with unmatched discipline and determination.",
-    isFeatured: true,
     category: ["all", "ibbf", "coach", "athlete"],
   },
+  {
+    id: "john-sale",
+    name: "John Sale",
+    photo: "/images/team/john-sale.jpeg",
+    roles: ["IBBF Athlete", "Coach"],
+    specializations: [],
+    bio: "IBBF-level competitive athlete and experienced coach with deep knowledge of competition prep and training science. A cornerstone of the G360 coaching team.",
+    category: ["all", "ibbf", "coach", "athlete"],
+  },
+  {
+    id: "pushpak-patil",
+    name: "Pushpak Patil",
+    photo: "/images/team/pushpak-patil.jpeg",
+    roles: ["MMA Fighter", "Influencer"],
+    specializations: ["Tech & Digital", "Athlete"],
+    bio: "MMA background fighter turned fitness influencer with 14+ years of training experience. The tech brain behind the G360 digital presence, Pushpak bridges the worlds of combat sports, fitness, and technology.",
+    category: ["all", "fitness-model", "athlete"],
+  },
+  // --- Zonal Heads ---
   {
     id: "pratik-lokhande",
     name: "Pratik Lokhande",
@@ -90,15 +108,6 @@ const athletes: Athlete[] = [
     bio: "Social media influencer and transformation specialist driving fitness culture in Khopoli. As Zonal Head, Pratik leads by example and builds champions in his community.",
     zone: "Khopoli",
     category: ["all", "zonal-head", "coach"],
-  },
-  {
-    id: "yash-bhutade",
-    name: "Yash Bhutade",
-    photo: "/images/team/yash-bhutade.jpeg",
-    roles: ["Fitness Model"],
-    specializations: ["Marketing Expert"],
-    bio: "Fitness model and marketing expert bringing the Power Storm brand to life. His aesthetic physique and creative vision help connect athletes with the G360 mission.",
-    category: ["all", "fitness-model"],
   },
   {
     id: "sandeep-rane",
@@ -121,14 +130,26 @@ const athletes: Athlete[] = [
     category: ["all", "zonal-head", "coach"],
   },
   {
-    id: "john-sale",
-    name: "John Sale",
-    photo: "/images/team/john-sale.jpeg",
-    roles: ["IBBF Athlete", "Coach"],
-    specializations: [],
-    bio: "IBBF-level competitive athlete and experienced coach with deep knowledge of competition prep and training science. A cornerstone of the G360 coaching team.",
-    category: ["all", "ibbf", "coach", "athlete"],
+    id: "shrikant-sontakke",
+    name: "Shrikant Sontakke",
+    photo: "/images/team/shrikant-sontakke.jpeg",
+    roles: ["Senior Fitness Consultant"],
+    specializations: ["Nutrition Consultant"],
+    bio: "Senior fitness and nutrition consultant heading the G360 operations in Solapur. Shrikant brings deep expertise in personalised coaching and has guided numerous successful transformations.",
+    zone: "Solapur",
+    category: ["all", "zonal-head", "coach"],
   },
+  {
+    id: "wasim-pathan",
+    name: "Wasim Pathan",
+    photo: "/images/team/wasim-pathan.jpeg",
+    roles: ["Fitness Coach", "Transformation Specialist"],
+    specializations: [],
+    bio: "Fitness coach and transformation specialist leading the G360 presence in Akkalkot. Wasim specialises in body recomposition and has helped countless clients achieve their dream physique.",
+    zone: "Akkalkot",
+    category: ["all", "zonal-head", "coach"],
+  },
+  // --- Senior Coaches ---
   {
     id: "dinesh-rokde",
     name: "Dinesh Rokde",
@@ -148,16 +169,6 @@ const athletes: Athlete[] = [
     category: ["all", "coach"],
   },
   {
-    id: "shrikant-sontakke",
-    name: "Shrikant Sontakke",
-    photo: "/images/team/shrikant-sontakke.jpeg",
-    roles: ["Senior Fitness Consultant"],
-    specializations: ["Nutrition Consultant"],
-    bio: "Senior fitness and nutrition consultant heading the G360 operations in Solapur. Shrikant brings deep expertise in personalised coaching and has guided numerous successful transformations.",
-    zone: "Solapur",
-    category: ["all", "zonal-head", "coach"],
-  },
-  {
     id: "shekhar-patharikar",
     name: "Shekhar Patharikar",
     photo: "/images/team/shekhar-patharikar.jpeg",
@@ -166,15 +177,15 @@ const athletes: Athlete[] = [
     bio: "Experienced senior fitness coach and nutrition consultant dedicated to holistic athlete development. His balanced approach to training and diet helps clients achieve sustainable, long-term results.",
     category: ["all", "coach"],
   },
+  // --- Fitness Models & Athletes ---
   {
-    id: "wasim-pathan",
-    name: "Wasim Pathan",
-    photo: "/images/team/wasim-pathan.jpeg",
-    roles: ["Fitness Coach", "Transformation Specialist"],
-    specializations: [],
-    bio: "Fitness coach and transformation specialist leading the G360 presence in Akkalkot. Wasim specialises in body recomposition and has helped countless clients achieve their dream physique.",
-    zone: "Akkalkot",
-    category: ["all", "zonal-head", "coach"],
+    id: "yash-bhutade",
+    name: "Yash Bhutade",
+    photo: "/images/team/yash-bhutade.jpeg",
+    roles: ["Fitness Model"],
+    specializations: ["Marketing Expert"],
+    bio: "Fitness model and marketing expert bringing the Power Storm brand to life. His aesthetic physique and creative vision help connect athletes with the G360 mission.",
+    category: ["all", "fitness-model"],
   },
   {
     id: "subhan-naik",
@@ -184,6 +195,15 @@ const athletes: Athlete[] = [
     specializations: [],
     bio: "Competitive athlete and fitness model with an impressive physique that represents the G360 standard. His dedication to training and discipline inspires the next generation of warriors.",
     category: ["all", "fitness-model", "athlete"],
+  },
+  {
+    id: "mahesh-irwadkar",
+    name: "Mahesh Irwadkar",
+    photo: "/images/team/mahesh-irwadkar.jpeg",
+    roles: ["Powerlifter", "Athlete"],
+    specializations: [],
+    bio: "Competitive powerlifter and dedicated athlete who leads by raw strength. His commitment to heavy lifting and disciplined training embodies the warrior ethos of G360.",
+    category: ["all", "athlete"],
   },
   {
     id: "satish-kyar",
@@ -203,28 +223,7 @@ const athletes: Athlete[] = [
     bio: "Passionate athlete focused on building strength and pushing physical limits. Najim represents the G360 warrior spirit with his consistent training and determination to excel.",
     category: ["all", "athlete"],
   },
-  {
-    id: "mahesh-irwadkar",
-    name: "Mahesh Irwadkar",
-    photo: "/images/team/mahesh-irwadkar.jpeg",
-    roles: ["Powerlifter", "Athlete"],
-    specializations: [],
-    bio: "Competitive powerlifter and dedicated athlete who leads by raw strength. His commitment to heavy lifting and disciplined training embodies the warrior ethos of G360.",
-    category: ["all", "athlete"],
-  },
-  {
-    id: "pushpak-patil",
-    name: "Pushpak Patil",
-    photo: "/images/team/pushpak-patil.jpeg",
-    roles: ["MMA Fighter", "Influencer"],
-    specializations: ["Tech & Digital", "Athlete"],
-    bio: "MMA background fighter turned fitness influencer with 14+ years of training experience. The tech brain behind the G360 digital presence, Pushpak bridges the worlds of combat sports, fitness, and technology.",
-    category: ["all", "fitness-model", "athlete"],
-  },
 ];
-
-const featuredAthlete = athletes.find((a) => a.isFeatured)!;
-const gridAthletes = athletes.filter((a) => !a.isFeatured);
 
 // ============================================
 // Athlete Card Component
@@ -315,8 +314,8 @@ export default function TeamPage() {
 
   const filteredAthletes =
     activeFilter === "all"
-      ? gridAthletes
-      : gridAthletes.filter((a) => a.category.includes(activeFilter));
+      ? athletes
+      : athletes.filter((a) => a.category.includes(activeFilter));
 
   return (
     <div className="bg-[#050d18]">
@@ -411,119 +410,6 @@ export default function TeamPage() {
             </motion.div>
           ))}
         </motion.div>
-      </section>
-
-      {/* ==================== FEATURED SPOTLIGHT ==================== */}
-      <section className="relative py-20 md:py-28">
-        {/* Decorative radials */}
-        <div className="absolute top-0 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d4af37]/[0.03] blur-3xl" />
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Section header */}
-          <motion.div
-            className="mx-auto mb-14 max-w-2xl text-center"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <span className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-[#00d4ff]">
-              Spotlight
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">
-              Inspiring Beyond Limits
-            </h2>
-          </motion.div>
-
-          {/* Spotlight card */}
-          <motion.div
-            className="group relative overflow-hidden rounded-2xl border-2 border-[#d4af37]/30 bg-gradient-to-br from-[#0f1d2e] to-[#142438] transition-all duration-500 hover:border-[#d4af37]/50 hover:shadow-xl hover:shadow-[#d4af37]/10"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {/* Gold top-border sweep */}
-            <div className="absolute top-0 left-0 z-10 h-[3px] w-0 bg-gradient-to-r from-[#b8962e] via-[#d4af37] to-[#e8c84a] transition-all duration-700 group-hover:w-full" />
-
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              {/* Photo side */}
-              <div className="relative aspect-[3/4] overflow-hidden bg-[#0a1628] lg:aspect-auto lg:min-h-[500px]">
-                <Image
-                  src={featuredAthlete.photo}
-                  alt={featuredAthlete.name}
-                  fill
-                  className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                />
-                {/* Gradient overlays */}
-                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0f1d2e] to-transparent lg:hidden" />
-                <div className="absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-[#0f1d2e]/80 to-transparent lg:block" />
-
-                {/* Gold corner accents */}
-                <div className="absolute top-4 left-4 h-12 w-12 border-t-2 border-l-2 border-[#d4af37]/40" />
-                <div className="absolute right-4 bottom-4 h-12 w-12 border-r-2 border-b-2 border-[#d4af37]/40" />
-              </div>
-
-              {/* Content side */}
-              <div className="flex flex-col justify-center gap-6 p-8 lg:p-12">
-                {/* Featured badge */}
-                <div className="flex items-center gap-2">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    className="text-[#d4af37]"
-                  >
-                    <path
-                      d="M10 1L12.39 6.26L18 7.27L14 11.14L14.76 17L10 14.27L5.24 17L6 11.14L2 7.27L7.61 6.26L10 1Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                  <span className="text-sm font-bold uppercase tracking-wider text-[#d4af37]">
-                    Featured Member
-                  </span>
-                </div>
-
-                {/* Name */}
-                <h3 className="font-display text-3xl font-bold tracking-wide text-white sm:text-4xl">
-                  {featuredAthlete.name}
-                </h3>
-
-                {/* Role badges */}
-                <div className="flex flex-wrap gap-2">
-                  {featuredAthlete.roles.map((role) => (
-                    <span
-                      key={role}
-                      className="rounded-full border border-[#d4af37]/40 bg-[#d4af37]/15 px-4 py-1.5 text-sm font-bold text-[#d4af37]"
-                    >
-                      {role}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Bio */}
-                <p className="text-base leading-relaxed text-gray-300">
-                  {featuredAthlete.bio}
-                </p>
-
-                {/* Specialization badges */}
-                <div className="flex flex-wrap gap-2">
-                  {featuredAthlete.specializations.map((spec) => (
-                    <span
-                      key={spec}
-                      className="rounded-full border border-[#00d4ff]/25 bg-[#00d4ff]/8 px-3 py-1 text-sm font-medium text-[#00d4ff]"
-                    >
-                      {spec}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
       </section>
 
       {/* ==================== TEAM SHOWCASE GRID ==================== */}
