@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { House, Package, Trophy, MessageCircle } from "lucide-react";
+import { House, Package, Users, Trophy, MessageCircle } from "lucide-react";
 
 const bottomNavItems = [
   { href: "/", label: "Home", icon: House },
   { href: "/products", label: "Products", icon: Package },
+  { href: "/team", label: "Team", icon: Users },
   { href: "/warriors", label: "Warriors", icon: Trophy },
   { href: "/contact", label: "Contact", icon: MessageCircle },
 ];
@@ -23,7 +24,7 @@ export default function MobileBottomNav() {
     <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
       {/* Glass morphism background */}
       <div className="border-t border-white/10 bg-[#050d18]/90 backdrop-blur-xl pb-[env(safe-area-inset-bottom)]">
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-5">
           {bottomNavItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(item.href);

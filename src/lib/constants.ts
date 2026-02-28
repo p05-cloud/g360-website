@@ -279,18 +279,20 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "recharge",
-    name: "Recharge",
+    name: "PS Recharge",
     slug: "recharge",
     category: "performance",
     description:
-      "Advanced electrolyte formula for hydration, endurance, and recovery. Stay charged during intense training sessions.",
-    highlights: ["Electrolyte Formula", "Hydration Support", "Endurance Boost", "Refreshing Taste"],
-    prices: [{ size: "500g", price: 650 }],
+      "Instant energy drink that hydrates faster than water. Packed with 126 kcal energy, 250mg BCAA, 300mg L-Glutamine, and 300mg Beta Alanine for peak performance and rapid recovery.",
+    highlights: ["Hydrates Faster Than Water", "126 kcal Energy", "250mg BCAA", "300mg L-Glutamine & Beta Alanine"],
+    prices: [{ size: "1 KG", price: 650 }],
     flavors: [
-      { name: "Orange", image: "/images/products/recharge-orange.jpg" },
-      { name: "Lemon", image: "/images/products/recharge-lemon.jpg" },
+      { name: "Cola", image: "/images/products/recharge-cola.jpg" },
+      { name: "Mango", image: "/images/products/recharge-mango.jpg" },
+      { name: "Mojito", image: "/images/products/recharge-mojito.jpg" },
+      { name: "Pineapple", image: "/images/products/recharge-pineapple.jpg" },
     ],
-    defaultImage: "/images/products/recharge-orange.jpg",
+    defaultImage: "/images/products/recharge-mango.jpg",
   },
 
   // --- HEALTH & WELLNESS ---

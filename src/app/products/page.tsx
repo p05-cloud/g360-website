@@ -243,14 +243,16 @@ const products: Product[] = [
   },
   {
     id: 15,
-    name: "Recharge Electrolyte",
+    name: "PS Recharge — Instant Energy Drink",
     category: "performance",
     description:
-      "Electrolyte and hydration formula to replenish minerals lost during intense training sessions.",
-    prices: [{ size: "500g", price: "650" }],
+      "Hydrates faster than water. Packed with 126 kcal energy, 250mg BCAA, 300mg L-Glutamine, and 300mg Beta Alanine for peak performance and rapid recovery.",
+    prices: [{ size: "1 KG", price: "650" }],
     flavors: [
+      { name: "Cola", image: "/images/products/recharge-cola.jpg" },
       { name: "Mango", image: "/images/products/recharge-mango.jpg" },
-      { name: "Lime Mojito", image: "/images/products/recharge-mojito.jpg" },
+      { name: "Mojito", image: "/images/products/recharge-mojito.jpg" },
+      { name: "Pineapple", image: "/images/products/recharge-pineapple.jpg" },
     ],
   },
   // ==================== HEALTH & WELLNESS ====================
