@@ -37,7 +37,7 @@ const scaleIn = {
 // ============================================
 
 const teamStats = [
-  { value: "17+", label: "Team Members" },
+  { value: "18+", label: "Team Members" },
   { value: "6+", label: "Zones Covered" },
   { value: "20+", label: "Years Experience" },
   { value: "\u221E", label: "Belief in Karma" },
@@ -232,6 +232,15 @@ const athletes: Athlete[] = [
     specializations: [],
     bio: "Passionate athlete focused on building strength and pushing physical limits. Najim represents the G360 warrior spirit with his consistent training and determination to excel.",
     category: ["all", "athlete"],
+  },
+  {
+    id: "sumeet-gadhve",
+    name: "Sumeet Gadhve",
+    photo: "/images/team/sumeet-gadhve.jpeg",
+    roles: ["Athlete", "Coach"],
+    specializations: ["Strength Training"],
+    bio: "Competitive athlete and dedicated coach who brings intensity and precision to every training session. Sumeet combines hands-on coaching expertise with his own athletic journey to help clients unlock their full potential through structured strength programs.",
+    category: ["all", "coach", "athlete"],
   },
 ];
 
