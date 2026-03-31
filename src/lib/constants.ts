@@ -491,12 +491,3 @@ export function formatPrice(price: number): string {
   }).format(price);
 }
 
-export function getWhatsAppLink(message: string): string {
-  return `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`;
-}
-
-export function getProductWhatsAppLink(product: Product, selectedSize?: string): string {
-  const sizeText = selectedSize ? ` (${selectedSize})` : "";
-  const message = `Hi! I'm interested in G360 ${product.name}${sizeText}. Can you share more details?`;
-  return getWhatsAppLink(message);
-}

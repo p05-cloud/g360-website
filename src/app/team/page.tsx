@@ -37,7 +37,7 @@ const scaleIn = {
 // ============================================
 
 const teamStats = [
-  { value: "16+", label: "Team Members" },
+  { value: "17+", label: "Team Members" },
   { value: "6+", label: "Zones Covered" },
   { value: "20+", label: "Years Experience" },
   { value: "\u221E", label: "Belief in Karma" },
@@ -148,6 +148,16 @@ const athletes: Athlete[] = [
     bio: "Fitness coach and transformation specialist leading the G360 presence in Akkalkot. Wasim specialises in body recomposition and has helped countless clients achieve their dream physique.",
     zone: "Akkalkot",
     category: ["all", "zonal-head", "coach"],
+  },
+  {
+    id: "inzamam-inamdar",
+    name: "Inzamam Inamdar",
+    photo: "/images/team/inzamam-inamdar.jpeg",
+    roles: ["Bodybuilder", "Certified Personal Trainer"],
+    specializations: ["Nutrition Coach"],
+    bio: "Dedicated bodybuilder, certified personal trainer, and nutrition coach from Solapur, Maharashtra. Recognized under the G20 Fit India Pledge, Inzamam brings professional expertise, discipline, and passion to transforming lives through fitness. His focus is on building strength, improving physique, and guiding individuals with the right nutrition and training strategies.",
+    zone: "Solapur",
+    category: ["all", "coach", "athlete"],
   },
   // --- Senior Coaches ---
   {

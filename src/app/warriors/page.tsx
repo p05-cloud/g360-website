@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { WHATSAPP_NUMBER, PRODUCTS } from "@/lib/constants";
+import { PRODUCTS } from "@/lib/constants";
 
 // ============================================
 // Animation Variants
@@ -167,21 +167,6 @@ function ReviewForm() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-
-    const stars = "\u2B50".repeat(rating);
-    const message = [
-      `*New G360 Review*`,
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Product: ${product || "General"}`,
-      `Rating: ${stars} (${rating}/5)`,
-      ``,
-      `Review:`,
-      reviewText,
-    ].join("\n");
-
-    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-    window.open(waUrl, "_blank");
     setSubmitted(true);
   }
 
@@ -214,7 +199,7 @@ function ReviewForm() {
           Thank You, Warrior!
         </h3>
         <p className="text-gray-400">
-          Your review has been sent via WhatsApp. We appreciate your feedback and
+          Thank you for your review! We appreciate your feedback and
           support!
         </p>
         <button
@@ -607,8 +592,7 @@ export default function WarriorsPage() {
                 their transformation.
               </p>
               <p className="mt-3 text-sm text-gray-500">
-                Your review will be sent directly to us via WhatsApp for verification
-                before being published on the site.
+                Your review will be verified before being published on the site.
               </p>
             </motion.div>
 
