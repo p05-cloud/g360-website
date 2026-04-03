@@ -80,7 +80,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Ultra-pure whey protein isolate for maximum absorption and lean muscle growth. Engineered for athletes who demand the best.",
     highlights: ["26g Protein per serving", "5.7g BCAAs", "4.1g Glutamic Acid", "Low Fat & Low Carb"],
-    prices: [{ size: "2KG", price: 8700 }],
+    prices: [{ size: "2KG", price: 9600 }],
     flavors: [
       { name: "American Icecream", image: "/images/products/isolate-whey-icecream.jpg" },
       { name: "Chocolate", image: "/images/products/isolate-whey-chocolate.jpg" },
@@ -98,8 +98,8 @@ export const PRODUCTS: Product[] = [
       "A powerful blend of whey concentrate and isolate for balanced nutrition. Perfect for daily use and consistent muscle recovery.",
     highlights: ["24g Protein per serving", "Whey Concentrate + Isolate Blend", "Great Taste", "Easy Mixing"],
     prices: [
-      { size: "1KG", price: 3800 },
-      { size: "2KG", price: 7000 },
+      { size: "1KG", price: 4000 },
+      { size: "2KG", price: 7700 },
     ],
     flavors: [
       { name: "Chocolate", image: "/images/products/whey-blend-chocolate.jpg" },
@@ -121,8 +121,8 @@ export const PRODUCTS: Product[] = [
       "Advanced whey protein formula fortified with L-Arginine and Creatine for explosive performance and maximum muscle pump.",
     highlights: ["30g Protein per serving", "Added L-Arginine", "Added Creatine", "Enhanced Recovery"],
     prices: [
-      { size: "1KG", price: 4000 },
-      { size: "2KG", price: 7300 },
+      { size: "1KG", price: 4100 },
+      { size: "2KG", price: 7800 },
     ],
     flavors: [
       { name: "Chocolate", image: "/images/products/nitro-whey-chocolate.jpg" },
@@ -141,8 +141,8 @@ export const PRODUCTS: Product[] = [
       "Lean protein formula enhanced with L-Carnitine and Green Tea extract. Designed for fat loss while preserving lean muscle.",
     highlights: ["26g Protein per serving", "Added L-Carnitine", "Green Tea Extract", "Supports Fat Loss"],
     prices: [
-      { size: "1KG", price: 3800 },
-      { size: "2KG", price: 7500 },
+      { size: "1KG", price: 4100 },
+      { size: "2KG", price: 7999 },
     ],
     flavors: [
       { name: "American Icecream", image: "/images/products/whey-diet-icecream.jpg" },

@@ -44,7 +44,7 @@ const products: Product[] = [
     badge: "Premium",
     description:
       "26g protein from 100% grass-fed whey isolate with 5.7g BCAAs, 4.1g Glutamic Acid. No sugar, instantized, gluten-free.",
-    prices: [{ size: "2 KG", price: "8,700" }],
+    prices: [{ size: "2 KG", price: "9,600" }],
     flavors: [
       { name: "American Icecream", image: "/images/products/isolate-whey-icecream.jpg" },
       { name: "Chocolate", image: "/images/products/isolate-whey-chocolate.jpg" },
@@ -59,8 +59,8 @@ const products: Product[] = [
     description:
       "24g protein concentrate & isolate blend. Just 2.9g carbs and 0.7g fats. Perfect for low carb, low fat diets.",
     prices: [
-      { size: "1 KG", price: "3,800" },
-      { size: "2 KG", price: "7,000" },
+      { size: "1 KG", price: "4,000" },
+      { size: "2 KG", price: "7,700" },
     ],
     flavors: [
       { name: "Chocolate", image: "/images/products/whey-blend-chocolate.jpg" },
@@ -79,8 +79,8 @@ const products: Product[] = [
     description:
       "30g protein with L-Arginine, Creatine Monohydrate & Digestive Enzymes. 6.3g BCAA, 0.56g L-Arginine, 3g Creatine per serving.",
     prices: [
-      { size: "1 KG", price: "4,000" },
-      { size: "2 KG", price: "7,300" },
+      { size: "1 KG", price: "4,100" },
+      { size: "2 KG", price: "7,800" },
     ],
     flavors: [
       { name: "Chocolate", image: "/images/products/nitro-whey-chocolate.jpg" },
@@ -96,8 +96,8 @@ const products: Product[] = [
     description:
       "Premium high protein blend with L-Carnitine & digestive enzymes. 26g protein, 150mg Green Tea, 500mg CLA, 500mg Garcinia Cambogia.",
     prices: [
-      { size: "1 KG", price: "3,800" },
-      { size: "2 KG", price: "7,500" },
+      { size: "1 KG", price: "4,100" },
+      { size: "2 KG", price: "7,999" },
     ],
     flavors: [
       { name: "American Icecream", image: "/images/products/whey-diet-icecream.jpg" },
