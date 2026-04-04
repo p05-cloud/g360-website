@@ -146,10 +146,9 @@ const products: Product[] = [
     description:
       "6g high quality BCAA in ideal 2:1:1 ratio. Boosts energy, reduces muscle fatigue and aids recovery post intense activity.",
     prices: [{ size: "250g", price: "2,300" }],
-    image: "/images/products/bcaa.png",
     flavors: [
-      { name: "Mix Berry" },
-      { name: "Mango" },
+      { name: "Mango", image: "/images/products/bcaa-mango.jpg" },
+      { name: "Mix Berry", image: "/images/products/bcaa-mixberry.jpg" },
       { name: "Watermelon" },
     ],
   },
@@ -197,10 +196,10 @@ const products: Product[] = [
       "Explosive energy, laser focus, and skin-splitting pumps. Engineered for maximum workout intensity.",
     prices: [{ size: "400g", price: "3,100" }],
     flavors: [
-      { name: "Mango Crush", image: "/images/products/preworkout-mango-400gm-clean.jpg" },
+      { name: "Mango Crush", image: "/images/products/preworkout-mango-400gm.jpg" },
       { name: "Watermelon", image: "/images/products/preworkout-watermelon-400gm.jpg" },
       { name: "Mix Berries", image: "/images/products/preworkout-mixberries-400gm.jpg" },
-      { name: "Strawberry", image: "/images/products/preworkout-strawberry-400gm-clean.jpg" },
+      { name: "Strawberry", image: "/images/products/preworkout-strawberry-400gm.jpg" },
       { name: "Pineapple", image: "/images/products/preworkout-pineapple-400gm.jpg" },
     ],
   },
