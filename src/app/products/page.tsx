@@ -194,7 +194,7 @@ const products: Product[] = [
     badge: "Energy",
     description:
       "Explosive energy, laser focus, and skin-splitting pumps. Engineered for maximum workout intensity.",
-    prices: [{ size: "400g", price: "3,100" }],
+    prices: [{ size: "400g", price: "2,500" }],
     flavors: [
       { name: "Mango Crush", image: "/images/products/preworkout-mango-400gm.jpg" },
       { name: "Watermelon", image: "/images/products/preworkout-watermelon-400gm.jpg" },
@@ -209,7 +209,7 @@ const products: Product[] = [
     category: "performance",
     description:
       "Same explosive formula in a compact 200gm size. Perfect for trying new flavors.",
-    prices: [{ size: "200g", price: "1,700" }],
+    prices: [{ size: "200g", price: "1,500" }],
     flavors: [
       { name: "Mango", image: "/images/products/preworkout-mango-200gm.jpg" },
       { name: "Mix Berry", image: "/images/products/preworkout-pinkguava-200gm.jpg" },
@@ -235,8 +235,8 @@ const products: Product[] = [
     description:
       "Micronised creatine monohydrate for increased strength, power output and muscle volumisation.",
     prices: [
-      { size: "250g", price: "1,800" },
-      { size: "100g", price: "800" },
+      { size: "250g", price: "1,700" },
+      { size: "100g", price: "700" },
     ],
     image: "/images/products/pure-creatine.jpg",
   },
@@ -270,7 +270,7 @@ const products: Product[] = [
     category: "health",
     description:
       "Advanced muscle gain support formula for maximising your training results.",
-    prices: [{ size: "60 caps", price: "1,500" }],
+    prices: [{ size: "60 tabs", price: "2,000" }],
     image: "/images/products/gainz-promo.jpg",
   },
   {
@@ -279,7 +279,7 @@ const products: Product[] = [
     category: "health",
     description:
       "Thermogenic formula to boost metabolism, enhance energy, and support your fat-loss journey.",
-    prices: [{ size: "60 caps", price: "2,000" }],
+    prices: [{ size: "60 tabs", price: "2,500" }],
     image: "/images/products/fat-burner.jpg",
   },
   {
@@ -288,7 +288,7 @@ const products: Product[] = [
     category: "health",
     description:
       "Complete daily multivitamin and mineral complex to fill nutritional gaps and support overall wellness.",
-    prices: [{ size: "60 tablets", price: "1,200" }],
+    prices: [{ size: "60 tabs", price: "850" }],
     image: "/images/products/multivitamins.jpg",
   },
   {
@@ -297,7 +297,7 @@ const products: Product[] = [
     category: "health",
     description:
       "High-potency fish oil softgels for heart health, joint support and cognitive function.",
-    prices: [{ size: "60 softgels", price: "900" }],
+    prices: [{ size: "60 tabs", price: "1,000" }],
     image: "/images/products/omega3-fishoil.jpg",
   },
   {
@@ -306,7 +306,7 @@ const products: Product[] = [
     category: "health",
     description:
       "Essential calcium supplement for strong bones, teeth and muscle function.",
-    prices: [{ size: "60 tablets", price: "600" }],
+    prices: [{ size: "60 tabs", price: "700" }],
     image: "/images/products/multivitamins.png",
   },
   {
@@ -315,7 +315,7 @@ const products: Product[] = [
     category: "health",
     description:
       "Complete digestive enzyme complex for improved nutrient absorption and gut health.",
-    prices: [{ size: "60 caps", price: "800" }],
+    prices: [{ size: "60 tabs", price: "1,500" }],
     image: "/images/products/multivitamins.png",
   },
   {
@@ -323,18 +323,31 @@ const products: Product[] = [
     name: "Peanut Butter",
     category: "health",
     description:
-      "High protein natural peanut butter. Great source of healthy fats and energy for athletes.",
-    prices: [{ size: "1 KG", price: "600" }],
-    image: "/images/products/pure-gain.png",
+      "100% natural peanut butter made with roasted peanuts. High protein with 8g per serve. No added salt, oil, gluten free with no trans-fat.",
+    prices: [
+      { size: "1 KG (Crunchy)", price: "1,000" },
+      { size: "1 KG (Smooth)", price: "900" },
+    ],
+    flavors: [
+      { name: "Cookies & Cream" },
+      { name: "Mango Chia Seed" },
+      { name: "Chocolate Crunchy" },
+    ],
   },
   {
     id: 24,
     name: "High Protein Oats",
     category: "health",
     description:
-      "Protein-enriched oats for a powerful breakfast. Fuel your day with sustained energy.",
-    prices: [{ size: "1 KG", price: "800" }],
-    image: "/images/products/pure-gain.png",
+      "High-protein oatmeal — a versatile and nutritious breakfast for satiety, muscle building, and blood sugar balance. Available in Chocolate with Fruit & Nut and Rolled Oats (Unflavoured).",
+    prices: [
+      { size: "1 KG (Chocolate)", price: "1,100" },
+      { size: "1 KG (Rolled Oats)", price: "450" },
+    ],
+    flavors: [
+      { name: "Chocolate & Fruit Nut" },
+      { name: "Rolled Oats (Unflavoured)" },
+    ],
   },
 ];
 
