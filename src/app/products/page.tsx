@@ -307,7 +307,7 @@ const products: Product[] = [
     description:
       "Essential calcium supplement for strong bones, teeth and muscle function.",
     prices: [{ size: "60 tabs", price: "700" }],
-    image: "/images/products/multivitamins.png",
+    image: "/images/products/calcium.jpg",
   },
   {
     id: 22,
@@ -316,7 +316,7 @@ const products: Product[] = [
     description:
       "Complete digestive enzyme complex for improved nutrient absorption and gut health.",
     prices: [{ size: "60 tabs", price: "1,500" }],
-    image: "/images/products/multivitamins.png",
+    image: "/images/products/digestive-enzymes.jpg",
   },
   {
     id: 23,
@@ -333,6 +333,7 @@ const products: Product[] = [
       { name: "Mango Chia Seed" },
       { name: "Chocolate Crunchy" },
     ],
+    image: "/images/products/peanut-butter.jpg",
   },
   {
     id: 24,
@@ -348,6 +349,7 @@ const products: Product[] = [
       { name: "Chocolate & Fruit Nut" },
       { name: "Rolled Oats (Unflavoured)" },
     ],
+    image: "/images/products/high-protein-oats.jpg",
   },
 ];
 
