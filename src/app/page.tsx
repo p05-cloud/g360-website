@@ -44,6 +44,9 @@ export default function HomePage() {
       {/* ── SECTION 1: HERO ──────────────────── */}
       <HeroSection />
 
+      {/* ── SECTION 1.5: POWER STORM BANNER ──── */}
+      <PowerStormBannerSection />
+
       {/* ── SECTION 2: PRAKASH MORE ──────────── */}
       <PrakashMoreSection />
 
@@ -197,6 +200,113 @@ function HeroSection() {
             />
           </svg>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SECTION 1.5 — POWER STORM BRAND BANNER
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+function PowerStormBannerSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section
+      ref={ref}
+      className="relative overflow-hidden bg-black"
+      aria-label="Power Storm — Feel the Power, Be the Storm"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        {/* Image panel — uses the brochure composition verbatim */}
+        <motion.div
+          variants={fadeIn}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          custom={0}
+          className="relative aspect-[2/3] w-full lg:aspect-auto lg:min-h-[600px]"
+        >
+          <Image
+            src="/images/hero-power-storm.jpg"
+            alt="Power Storm — Feel the Power, Be the Storm"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/60 lg:to-black/0" />
+        </motion.div>
+
+        {/* Copy panel */}
+        <div className="relative flex flex-col justify-center gap-6 bg-black px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
+          <motion.span
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={0}
+            className="text-sm uppercase tracking-[0.35em] text-[#d4af37]"
+            style={{ fontFamily: "'Orbitron', sans-serif" }}
+          >
+            Power Storm Nutrition
+          </motion.span>
+
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={1}
+            className="text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl"
+            style={{ fontFamily: "'Orbitron', sans-serif" }}
+          >
+            Feel the{" "}
+            <span className="bg-gradient-to-r from-[#b8962e] via-[#d4af37] to-[#e8c84a] bg-clip-text text-transparent">
+              Power
+            </span>
+            <br />
+            Be the{" "}
+            <span className="bg-gradient-to-r from-[#b8962e] via-[#d4af37] to-[#e8c84a] bg-clip-text text-transparent">
+              Storm
+            </span>
+          </motion.h2>
+
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={2}
+            className="max-w-lg text-base leading-relaxed text-gray-300 sm:text-lg"
+            style={{ fontFamily: "'Rajdhani', sans-serif" }}
+          >
+            Power Storm Nutrition is built on pure ingredients, clean formulas,
+            and real results. Lab-tested whey, amino acids, and wellness
+            products engineered for athletes who demand the best from every
+            scoop.
+          </motion.p>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={3}
+            className="flex flex-col gap-3 pt-2 sm:flex-row sm:gap-4"
+          >
+            <Link
+              href="/products"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#b8962e] via-[#d4af37] to-[#e8c84a] px-8 py-3 text-sm font-bold uppercase tracking-wider text-black transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] sm:text-base"
+              style={{ fontFamily: "'Rajdhani', sans-serif" }}
+            >
+              Explore Products
+            </Link>
+            <Link
+              href="/brands"
+              className="inline-flex items-center justify-center rounded-lg border-2 border-[#00d4ff] px-8 py-3 text-sm font-bold uppercase tracking-wider text-[#00d4ff] transition-all hover:scale-105 hover:bg-[#00d4ff]/10 hover:shadow-[0_0_25px_rgba(0,212,255,0.3)] sm:text-base"
+              style={{ fontFamily: "'Rajdhani', sans-serif" }}
+            >
+              About the Brand
+            </Link>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
