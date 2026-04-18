@@ -234,7 +234,7 @@ function PowerStormBannerSection() {
             src="/images/hero-power-storm.jpg"
             alt="Power Storm — Feel the Power, Be the Storm"
             fill
-            className="object-cover object-center"
+            className="object-cover object-top"
             sizes="(max-width: 1024px) 100vw, 50vw"
             priority
           />
@@ -435,107 +435,98 @@ function PrakashMoreSection() {
       className="relative py-20 sm:py-28 lg:py-32"
       style={{ background: "linear-gradient(180deg, #050d18 0%, #0a1628 50%, #050d18 100%)" }}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* ── Image column ── */}
+      <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center gap-6">
+          {/* Monogram mark — stands in for a portrait we don't have yet */}
           <motion.div
-            variants={fadeIn}
+            variants={scaleIn}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             custom={0}
-            className="relative mx-auto w-full max-w-md lg:max-w-none"
+            className="relative mb-2 flex h-28 w-28 items-center justify-center rounded-full border-2 border-[#d4af37]/60 bg-[#0a1628] shadow-[0_0_40px_rgba(212,175,55,0.25)] sm:h-32 sm:w-32"
           >
-            {/* Decorative gold border offset */}
-            <div className="absolute -right-3 -bottom-3 sm:-right-4 sm:-bottom-4 h-full w-full rounded-2xl border-2 border-[#d4af37]/40" />
-            <div className="relative overflow-hidden rounded-2xl">
-              <Image
-                src="/images/hero/prakash-more.png"
-                alt="Prakash More - G360 Fitness Expert"
-                width={600}
-                height={750}
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 1024px) 90vw, 45vw"
-              />
-              {/* Subtle overlay gradient at bottom */}
-              <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-[#050d18] to-transparent" />
-            </div>
+            <span
+              className="bg-gradient-to-b from-[#f4e4bc] via-[#d4af37] to-[#b8962e] bg-clip-text text-5xl font-black text-transparent sm:text-6xl"
+              style={{ fontFamily: "'Cinzel', serif" }}
+            >
+              PM
+            </span>
           </motion.div>
 
-          {/* ── Content column ── */}
-          <div className="flex flex-col gap-6">
-            <motion.span
-              variants={fadeUp}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              custom={0}
-              className="text-sm uppercase tracking-[0.25em] text-[#00d4ff]"
-              style={{ fontFamily: "'Orbitron', sans-serif" }}
-            >
-              The Visionary
-            </motion.span>
+          <motion.span
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={1}
+            className="text-sm uppercase tracking-[0.25em] text-[#00d4ff]"
+            style={{ fontFamily: "'Orbitron', sans-serif" }}
+          >
+            The Visionary
+          </motion.span>
 
-            <motion.h2
-              variants={fadeUp}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              custom={1}
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white"
-              style={{ fontFamily: "'Orbitron', sans-serif" }}
-            >
-              Prakash{" "}
-              <span className="bg-gradient-to-r from-[#b8962e] via-[#d4af37] to-[#e8c84a] bg-clip-text text-transparent">
-                More
-              </span>
-            </motion.h2>
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={2}
+            className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl"
+            style={{ fontFamily: "'Orbitron', sans-serif" }}
+          >
+            Prakash{" "}
+            <span className="bg-gradient-to-r from-[#b8962e] via-[#d4af37] to-[#e8c84a] bg-clip-text text-transparent">
+              More
+            </span>
+          </motion.h2>
 
-            <motion.p
-              variants={fadeUp}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              custom={2}
-              className="max-w-lg text-base sm:text-lg leading-relaxed text-gray-300"
-              style={{ fontFamily: "'Rajdhani', sans-serif" }}
-            >
-              With over two decades of experience in fitness coaching and sports
-              nutrition, Prakash More has transformed the lives of thousands of
-              athletes and fitness enthusiasts across India. As the founder of
-              G360, he brings a holistic approach to fitness that combines
-              modern science with timeless discipline.
-            </motion.p>
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={3}
+            className="max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg"
+            style={{ fontFamily: "'Rajdhani', sans-serif" }}
+          >
+            With over two decades of experience in fitness coaching and sports
+            nutrition, Prakash More has transformed the lives of thousands of
+            athletes and fitness enthusiasts across India. As the founder of
+            G360, he brings a holistic approach to fitness that combines
+            modern science with timeless discipline.
+          </motion.p>
 
-            {/* Credentials grid */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              custom={3}
-              className="grid grid-cols-2 gap-3 sm:gap-4"
-            >
-              {credentials.map((cred) => (
-                <div
-                  key={cred.label}
-                  className="flex items-center gap-3 rounded-xl border border-[#d4af37]/20 bg-[#0f1d2e]/70 px-4 py-3 backdrop-blur-sm transition-all hover:border-[#d4af37]/50 hover:shadow-[0_0_15px_rgba(212,175,55,0.15)]"
+          {/* Credentials grid */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={4}
+            className="mt-4 grid w-full max-w-3xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4"
+          >
+            {credentials.map((cred) => (
+              <div
+                key={cred.label}
+                className="flex items-center justify-center gap-3 rounded-xl border border-[#d4af37]/20 bg-[#0f1d2e]/70 px-4 py-3 backdrop-blur-sm transition-all hover:border-[#d4af37]/50 hover:shadow-[0_0_15px_rgba(212,175,55,0.15)]"
+              >
+                <span className="text-xl" aria-hidden="true">
+                  {cred.icon}
+                </span>
+                <span
+                  className="text-sm font-semibold text-white sm:text-base"
+                  style={{ fontFamily: "'Rajdhani', sans-serif" }}
                 >
-                  <span className="text-xl" aria-hidden="true">
-                    {cred.icon}
-                  </span>
-                  <span
-                    className="text-sm sm:text-base font-semibold text-white"
-                    style={{ fontFamily: "'Rajdhani', sans-serif" }}
-                  >
-                    {cred.label}
-                  </span>
-                </div>
-              ))}
-            </motion.div>
+                  {cred.label}
+                </span>
+              </div>
+            ))}
+          </motion.div>
 
-            {/* Learn More button */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              custom={4}
-            >
+          {/* Learn More button */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={5}
+            className="mt-4"
+          >
               <Link
                 href="/about"
                 className="mt-2 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#b8962e] via-[#d4af37] to-[#e8c84a] px-8 py-3 text-sm sm:text-base font-bold text-black uppercase tracking-wider transition-all hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] hover:scale-105"
@@ -557,7 +548,6 @@ function PrakashMoreSection() {
                 </svg>
               </Link>
             </motion.div>
-          </div>
         </div>
       </div>
     </section>
