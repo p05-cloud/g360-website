@@ -219,39 +219,46 @@ function PowerStormBannerSection() {
     <section
       ref={ref}
       className="relative overflow-hidden bg-black"
-      aria-label="Power Storm — Feel the Power, Be the Storm"
+      aria-label="Prakash More — Feel the Power, Be the Storm"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        {/* Image panel — uses the brochure composition verbatim */}
+      {/* Ambient orange glow blending with the banner */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-0 top-1/2 hidden h-[720px] w-[520px] -translate-y-1/2 rounded-full blur-[120px] lg:block"
+        style={{ background: "radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%)" }}
+      />
+
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:flex-row lg:gap-12 lg:px-8 lg:py-20">
+        {/* Banner image — full-bleed brochure hero, Prakash with ropes */}
         <motion.div
           variants={fadeIn}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           custom={0}
-          className="relative aspect-[2/3] w-full lg:aspect-auto lg:min-h-[600px]"
+          className="relative w-full max-w-[460px] flex-shrink-0 overflow-hidden rounded-2xl shadow-[0_0_60px_rgba(245,158,11,0.2)] lg:max-w-[500px]"
         >
           <Image
             src="/images/hero-power-storm.jpg"
-            alt="Power Storm — Feel the Power, Be the Storm"
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            alt="Prakash More — Feel the Power, Be the Storm"
+            width={1080}
+            height={1620}
+            className="h-auto w-full"
+            sizes="(max-width: 1024px) 90vw, 500px"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/60 lg:to-black/0" />
         </motion.div>
 
         {/* Copy panel */}
-        <div className="relative flex flex-col justify-center gap-6 bg-black px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
+        <div className="flex flex-col items-center gap-5 text-center lg:items-start lg:text-left">
           <motion.span
             variants={fadeUp}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             custom={0}
-            className="text-sm uppercase tracking-[0.35em] text-[#d4af37]"
+            className="text-xs uppercase tracking-[0.35em] text-[#d4af37] sm:text-sm"
             style={{ fontFamily: "'Orbitron', sans-serif" }}
           >
-            Power Storm Nutrition
+            Prakash More · Power Storm Nutrition
           </motion.span>
 
           <motion.h2
@@ -259,7 +266,7 @@ function PowerStormBannerSection() {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             custom={1}
-            className="text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl"
+            className="text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl xl:text-6xl"
             style={{ fontFamily: "'Orbitron', sans-serif" }}
           >
             Feel the{" "}
@@ -278,11 +285,11 @@ function PowerStormBannerSection() {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             custom={2}
-            className="max-w-lg text-base leading-relaxed text-gray-300 sm:text-lg"
+            className="max-w-xl text-sm leading-relaxed text-gray-300 sm:text-base lg:text-lg"
             style={{ fontFamily: "'Rajdhani', sans-serif" }}
           >
-            Power Storm Nutrition is built on pure ingredients, clean formulas,
-            and real results. Lab-tested whey, amino acids, and wellness
+            Two decades of coaching, discipline, and clean nutrition — distilled
+            into Power Storm. Lab-tested whey, amino acids, and wellness
             products engineered for athletes who demand the best from every
             scoop.
           </motion.p>
@@ -292,18 +299,18 @@ function PowerStormBannerSection() {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             custom={3}
-            className="flex flex-col gap-3 pt-2 sm:flex-row sm:gap-4"
+            className="mt-2 flex flex-col gap-3 sm:flex-row sm:gap-4"
           >
             <Link
               href="/products"
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#b8962e] via-[#d4af37] to-[#e8c84a] px-8 py-3 text-sm font-bold uppercase tracking-wider text-black transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] sm:text-base"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#b8962e] via-[#d4af37] to-[#e8c84a] px-6 py-3 text-sm font-bold uppercase tracking-wider text-black transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] sm:px-8 sm:text-base"
               style={{ fontFamily: "'Rajdhani', sans-serif" }}
             >
               Explore Products
             </Link>
             <Link
               href="/brands"
-              className="inline-flex items-center justify-center rounded-lg border-2 border-[#00d4ff] px-8 py-3 text-sm font-bold uppercase tracking-wider text-[#00d4ff] transition-all hover:scale-105 hover:bg-[#00d4ff]/10 hover:shadow-[0_0_25px_rgba(0,212,255,0.3)] sm:text-base"
+              className="inline-flex items-center justify-center rounded-lg border-2 border-[#00d4ff] px-6 py-3 text-sm font-bold uppercase tracking-wider text-[#00d4ff] transition-all hover:scale-105 hover:bg-[#00d4ff]/10 hover:shadow-[0_0_25px_rgba(0,212,255,0.3)] sm:px-8 sm:text-base"
               style={{ fontFamily: "'Rajdhani', sans-serif" }}
             >
               About the Brand
