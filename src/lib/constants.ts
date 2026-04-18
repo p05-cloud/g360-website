@@ -215,9 +215,9 @@ export const PRODUCTS: Product[] = [
     description:
       "Pure L-Leucine powder - the most critical BCAA for triggering muscle protein synthesis and growth signaling.",
     highlights: ["Pure L-Leucine", "mTOR Activation", "Muscle Protein Synthesis", "Unflavored for Stacking"],
-    prices: [{ size: "100g", price: 1200 }],
-    flavors: [{ name: "Unflavored", image: "/images/products/l-leucine.jpg" }],
-    defaultImage: "/images/products/l-leucine.jpg",
+    prices: [{ size: "100g", price: 700 }],
+    flavors: [{ name: "Unflavored", image: "/images/products/ps-l-leucine.jpg" }],
+    defaultImage: "/images/products/ps-l-leucine.jpg",
   },
   {
     id: "l-carnitine",
@@ -240,8 +240,8 @@ export const PRODUCTS: Product[] = [
       "Pure L-Glutamine for gut health, immune support, and enhanced muscle recovery after intense training sessions.",
     highlights: ["Pure L-Glutamine", "Gut Health Support", "Immune Function", "Post-Workout Recovery"],
     prices: [{ size: "250g", price: 1800 }],
-    flavors: [{ name: "Unflavored", image: "/images/products/l-glutamine.jpg" }],
-    defaultImage: "/images/products/l-glutamine.jpg",
+    flavors: [{ name: "Unflavored", image: "/images/products/ps-l-glutamine.jpg" }],
+    defaultImage: "/images/products/ps-l-glutamine.jpg",
   },
 
   // --- PERFORMANCE ---
@@ -271,11 +271,11 @@ export const PRODUCTS: Product[] = [
       "Micronized Creatine Monohydrate for increased strength, power output, and muscle volumization.",
     highlights: ["Pure Creatine Monohydrate", "Micronized for Absorption", "Strength & Power", "Muscle Volumization"],
     prices: [
-      { size: "100g", price: 800 },
-      { size: "250g", price: 1800 },
+      { size: "100g", price: 700 },
+      { size: "250g", price: 1700 },
     ],
-    flavors: [{ name: "Unflavored", image: "/images/products/creatine.jpg" }],
-    defaultImage: "/images/products/creatine.jpg",
+    flavors: [{ name: "Unflavored", image: "/images/products/ps-pure-creatine.jpg" }],
+    defaultImage: "/images/products/ps-pure-creatine.jpg",
   },
   {
     id: "recharge",
@@ -304,9 +304,9 @@ export const PRODUCTS: Product[] = [
     description:
       "Powerful thermogenic fat burner with Green Tea, L-Carnitine, and Garcinia Cambogia for accelerated fat loss.",
     highlights: ["Green Tea Extract", "L-Carnitine", "Garcinia Cambogia", "Thermogenic Formula"],
-    prices: [{ size: "60 Capsules", price: 2000 }],
-    flavors: [{ name: "Capsules", image: "/images/products/fat-burner.jpg" }],
-    defaultImage: "/images/products/fat-burner.jpg",
+    prices: [{ size: "60 Tablets", price: 1500 }],
+    flavors: [{ name: "Tablets", image: "/images/products/ps-fat-burner.jpg" }],
+    defaultImage: "/images/products/ps-fat-burner.jpg",
   },
   {
     id: "omega-3-fish-oil",
@@ -328,9 +328,99 @@ export const PRODUCTS: Product[] = [
     description:
       "Complete daily multivitamin and mineral formula to fill nutritional gaps and support overall health and immunity.",
     highlights: ["Complete Formula", "Vitamins & Minerals", "Immune Support", "Daily Wellness"],
-    prices: [{ size: "60 Tablets", price: 1200 }],
-    flavors: [{ name: "Tablets", image: "/images/products/multivitamins.jpg" }],
-    defaultImage: "/images/products/multivitamins.jpg",
+    prices: [{ size: "60 Tablets", price: 850 }],
+    flavors: [{ name: "Tablets", image: "/images/products/ps-multivitamin.jpg" }],
+    defaultImage: "/images/products/ps-multivitamin.jpg",
+  },
+  {
+    id: "gainz",
+    name: "Gainz",
+    slug: "gainz",
+    category: "protein",
+    badge: "Gainer",
+    description:
+      "Weight gainer tablets engineered for digestion and muscle mass. Clean gains without the bulk of powder gainers.",
+    highlights: ["Digestion Support", "Lean Mass Gain", "Easy to Stack", "100 Tablet Pack"],
+    prices: [{ size: "100 Tablets", price: 1800 }],
+    flavors: [{ name: "Tablets", image: "/images/products/ps-gainz.jpg" }],
+    defaultImage: "/images/products/ps-gainz.jpg",
+  },
+  {
+    id: "testo-booster",
+    name: "Testo Booster",
+    slug: "testo-booster",
+    category: "health",
+    description:
+      "Advanced stimulation for testosterone support. Formulated to back strength training, recovery, and male vitality.",
+    highlights: ["Testosterone Support", "Strength & Recovery", "Vitality Formula", "60 Tablet Pack"],
+    prices: [{ size: "60 Tablets", price: 2500 }],
+    flavors: [{ name: "Tablets", image: "/images/products/ps-testo-booster.jpg" }],
+    defaultImage: "/images/products/ps-testo-booster.jpg",
+  },
+  {
+    id: "l-arginine",
+    name: "L-Arginine",
+    slug: "l-arginine",
+    category: "amino",
+    description:
+      "L-Arginine with L-Citrulline — essential precursors of nitric oxide. Supports cardiovascular health, blood flow, and athletic performance.",
+    highlights: ["With L-Citrulline", "Nitric Oxide Precursor", "Cardiovascular Health", "Performance & Recovery"],
+    prices: [{ size: "60 Tablets", price: 1000 }],
+    flavors: [{ name: "Tablets", image: "/images/products/ps-l-arginine.jpg" }],
+    defaultImage: "/images/products/ps-l-arginine.jpg",
+  },
+  {
+    id: "calcium",
+    name: "Calcium",
+    slug: "calcium",
+    category: "health",
+    description:
+      "Bioavailable calcium citrate for superior absorption. Supports bone, teeth, joint, and muscle health.",
+    highlights: ["Calcium Citrate Form", "Bone & Joint Support", "Better Absorption", "60 Tablet Pack"],
+    prices: [{ size: "60 Tablets", price: 700 }],
+    flavors: [{ name: "Tablets", image: "/images/products/ps-calcium.jpg" }],
+    defaultImage: "/images/products/ps-calcium.jpg",
+  },
+  {
+    id: "digestive-enzymes",
+    name: "Digestive Enzymes",
+    slug: "digestive-enzymes",
+    category: "health",
+    description:
+      "Broad-spectrum digestive enzyme complex for better nutrient absorption and reduced bloating after high-protein meals.",
+    highlights: ["Broad-Spectrum Enzymes", "Improves Absorption", "Reduces Bloating", "60 Tablet Pack"],
+    prices: [{ size: "60 Tablets", price: 1500 }],
+    flavors: [{ name: "Tablets", image: "/images/products/ps-digestive-enzymes.jpg" }],
+    defaultImage: "/images/products/ps-digestive-enzymes.jpg",
+  },
+  {
+    id: "peanut-butter",
+    name: "Peanut Butter",
+    slug: "peanut-butter",
+    category: "health",
+    badge: "Food",
+    description:
+      "High-protein peanut butter in Cream & Cookies. Packed with crunch and clean fats for a satisfying fitness-friendly snack.",
+    highlights: ["High Protein Source", "Crunchy Texture", "Clean Fats", "1 KG Tub"],
+    prices: [{ size: "1 KG", price: 1000 }],
+    flavors: [{ name: "Cream & Cookies", image: "/images/products/ps-peanut-butter.jpg" }],
+    defaultImage: "/images/products/ps-peanut-butter.jpg",
+  },
+  {
+    id: "high-protein-oats",
+    name: "High Protein Oats",
+    slug: "high-protein-oats",
+    category: "protein",
+    badge: "Food",
+    description:
+      "Instant high-protein oats with fruit and nut. 22g protein, 12.5g fibre per serving. Banned-substance free.",
+    highlights: ["22g Protein per serving", "12.5g Fibre", "Dried Fruits & Nuts", "Banned-Substance Free"],
+    prices: [
+      { size: "450g", price: 450 },
+      { size: "1 KG", price: 1100 },
+    ],
+    flavors: [{ name: "Chocolate", image: "/images/products/ps-protein-oats.jpg" }],
+    defaultImage: "/images/products/ps-protein-oats.jpg",
   },
 ];
 

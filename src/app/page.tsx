@@ -56,6 +56,9 @@ export default function HomePage() {
       {/* ── SECTION 4: PRODUCTS PREVIEW ──────── */}
       <ProductsPreviewSection />
 
+      {/* ── SECTION 4.5: STAY FULL / STAY FIT ── */}
+      <StayFullStayFitSection />
+
       {/* ── SECTION 5: CTA ───────────────────── */}
       <CTASection />
     </main>
@@ -306,6 +309,106 @@ function PowerStormBannerSection() {
               About the Brand
             </Link>
           </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SECTION 4.5 — STAY FULL / STAY FIT  (Peanut Butter + Oats)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+function StayFullStayFitSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const items = [
+    {
+      name: "Peanut Butter",
+      tagline: "Cream & Cookies · Crunchy · 1 KG",
+      image: "/images/products/ps-peanut-butter.jpg",
+      href: "/products",
+    },
+    {
+      name: "High Protein Oats",
+      tagline: "22g Protein · 12.5g Fibre · 1 KG",
+      image: "/images/products/ps-protein-oats.jpg",
+      href: "/products",
+    },
+  ];
+
+  return (
+    <section
+      ref={ref}
+      className="relative overflow-hidden bg-black py-20 sm:py-28"
+      aria-label="Stay Full / Stay Fit — Peanut Butter & High Protein Oats"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          custom={0}
+          className="mb-12 text-center"
+        >
+          <span
+            className="text-sm uppercase tracking-[0.35em] text-[#d4af37]"
+            style={{ fontFamily: "'Orbitron', sans-serif" }}
+          >
+            Power Storm · Everyday Fuel
+          </span>
+          <h2
+            className="mt-3 text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl"
+            style={{ fontFamily: "'Orbitron', sans-serif" }}
+          >
+            Stay{" "}
+            <span className="bg-gradient-to-r from-[#b8962e] via-[#d4af37] to-[#e8c84a] bg-clip-text text-transparent">
+              Full
+            </span>{" "}
+            / Stay{" "}
+            <span className="bg-gradient-to-r from-[#b8962e] via-[#d4af37] to-[#e8c84a] bg-clip-text text-transparent">
+              Fit
+            </span>
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
+          {items.map((item, i) => (
+            <motion.div
+              key={item.name}
+              variants={scaleIn}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              custom={i + 1}
+            >
+              <Link
+                href={item.href}
+                className="group relative flex aspect-[3/4] w-full overflow-hidden rounded-2xl border border-[#d4af37]/20 bg-gradient-to-b from-[#0a1628] to-[#050d18] transition-all hover:border-[#d4af37]/60 hover:shadow-[0_0_40px_rgba(212,175,55,0.2)]"
+              >
+                <Image
+                  src={item.image}
+                  alt={`Power Storm ${item.name}`}
+                  fill
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-24">
+                  <h3
+                    className="text-2xl font-bold text-white sm:text-3xl"
+                    style={{ fontFamily: "'Orbitron', sans-serif" }}
+                  >
+                    {item.name}
+                  </h3>
+                  <p
+                    className="mt-1 text-sm text-[#d4af37] sm:text-base"
+                    style={{ fontFamily: "'Rajdhani', sans-serif" }}
+                  >
+                    {item.tagline}
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
