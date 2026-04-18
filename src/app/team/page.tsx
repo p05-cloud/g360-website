@@ -37,7 +37,7 @@ const scaleIn = {
 // ============================================
 
 const teamStats = [
-  { value: "18+", label: "Team Members" },
+  { value: "20+", label: "Team Members" },
   { value: "6+", label: "Zones Covered" },
   { value: "20+", label: "Years Experience" },
   { value: "\u221E", label: "Belief in Karma" },
@@ -241,6 +241,24 @@ const athletes: Athlete[] = [
     specializations: ["Strength Training"],
     bio: "Competitive athlete and dedicated coach who brings intensity and precision to every training session. Sumeet combines hands-on coaching expertise with his own athletic journey to help clients unlock their full potential through structured strength programs.",
     category: ["all", "coach", "athlete"],
+  },
+  {
+    id: "prashant-kemble",
+    name: "Prashant Kemble",
+    photo: "/images/team/prashant-kemble.jpeg",
+    roles: ["Bodybuilder", "Athlete"],
+    specializations: ["Competition Prep"],
+    bio: "Competitive bodybuilder representing the G360 family on the stage. Prashant's chiseled physique and competition-ready conditioning reflect years of disciplined training and unwavering dedication to the craft.",
+    category: ["all", "athlete"],
+  },
+  {
+    id: "sanket-dadagol",
+    name: "Sanket Dadagol",
+    photo: "/images/team/sanket-dadagol.jpeg",
+    roles: ["Fitness Model", "Athlete"],
+    specializations: ["Aesthetic Physique"],
+    bio: "Fitness model and athlete showcasing the G360 standard of aesthetic conditioning. Sanket's lean, shredded physique and disciplined approach inspire the next wave of warriors chasing their best selves.",
+    category: ["all", "fitness-model", "athlete"],
   },
 ];
 
