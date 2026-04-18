@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -174,32 +173,42 @@ export default function AboutPage() {
       {/* ==================== ABOUT MAIN SECTION ==================== */}
       <section className="relative py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            {/* Left: Image with decorative border */}
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-16">
+            {/* Left: Gold PM monogram (stand-in for a real portrait) */}
             <motion.div
-              className="relative mx-auto w-full max-w-md lg:max-w-none"
+              className="relative mx-auto flex w-full max-w-md items-center justify-center lg:max-w-none"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <div className="relative">
-                {/* Gold decorative border offset */}
-                <div className="absolute -top-4 -left-4 h-full w-full rounded-2xl border-2 border-[#d4af37]/40" />
-
-                {/* Image container */}
-                <div className="relative overflow-hidden rounded-2xl bg-[#0a1628]">
-                  <Image
-                    src="/images/hero/prakash-more.png"
-                    alt="Prakash More - Founder of G360"
-                    width={600}
-                    height={700}
-                    className="h-auto w-full object-cover"
-                    priority
-                  />
-
-                  {/* Gradient overlay at bottom */}
-                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#050d18] to-transparent" />
+              <div className="relative flex flex-col items-center gap-6 py-6">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 -z-10 blur-[100px]"
+                  style={{ background: "radial-gradient(circle at center, rgba(212,175,55,0.22) 0%, transparent 70%)" }}
+                />
+                <div className="relative flex h-48 w-48 items-center justify-center rounded-full border-2 border-[#d4af37]/60 bg-[#0a1628] shadow-[0_0_60px_rgba(212,175,55,0.25)] sm:h-56 sm:w-56">
+                  <span
+                    className="bg-gradient-to-b from-[#f4e4bc] via-[#d4af37] to-[#b8962e] bg-clip-text text-8xl font-black text-transparent sm:text-9xl"
+                    style={{ fontFamily: "'Cinzel', serif" }}
+                  >
+                    PM
+                  </span>
+                </div>
+                <div className="text-center">
+                  <div
+                    className="text-xs uppercase tracking-[0.3em] text-[#00d4ff] sm:text-sm"
+                    style={{ fontFamily: "'Orbitron', sans-serif" }}
+                  >
+                    Founder · Coach
+                  </div>
+                  <div
+                    className="mt-2 text-lg text-[#d4af37] sm:text-xl"
+                    style={{ fontFamily: "'Cinzel', serif" }}
+                  >
+                    Prakash More
+                  </div>
                 </div>
               </div>
             </motion.div>
