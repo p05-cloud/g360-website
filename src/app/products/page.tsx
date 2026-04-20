@@ -333,7 +333,7 @@ const products: Product[] = [
       { name: "Mango Chia Seed" },
       { name: "Chocolate Crunchy" },
     ],
-    image: "/images/products/peanut-butter.jpg",
+    image: "/images/products/ps-peanut-butter.jpg",
   },
   {
     id: 24,
@@ -349,7 +349,7 @@ const products: Product[] = [
       { name: "Chocolate & Fruit Nut" },
       { name: "Rolled Oats (Unflavoured)" },
     ],
-    image: "/images/products/high-protein-oats.jpg",
+    image: "/images/products/ps-protein-oats.jpg",
   },
 ];
 
