@@ -5,7 +5,7 @@
 // Primary site URL — override via NEXT_PUBLIC_SITE_URL env var when you point
 // a custom domain (e.g. https://g360.in) at the Vercel deployment.
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://g360-india.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.g360supplements.in";
 
 export const SITE_NAME = "G360 - Guru 360";
 export const SITE_SHORT_NAME = "G360";
