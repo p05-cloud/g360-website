@@ -72,15 +72,6 @@ const filterCategories: { key: AthleteCategory; label: string }[] = [
 const athletes: Athlete[] = [
   // --- IBBF Athletes & Key Leaders ---
   {
-    id: "pratik-mohite",
-    name: "Pratik Mohite",
-    photo: "/images/team/pratik-mohite.jpeg",
-    roles: ["IBBF Athlete", "Divyang Champion"],
-    specializations: ["Coach", "Diet Consultant"],
-    bio: "IBBF-recognized Divyang athlete who proves that true strength knows no boundaries. As a certified coach and diet consultant, Pratik inspires the entire G360 family with unmatched discipline and determination.",
-    category: ["all", "ibbf", "coach", "athlete"],
-  },
-  {
     id: "john-sale",
     name: "John Sale",
     photo: "/images/team/john-sale.jpeg",
