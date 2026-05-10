@@ -251,6 +251,15 @@ const athletes: Athlete[] = [
     bio: "Fitness model and athlete showcasing the G360 standard of aesthetic conditioning. Sanket's lean, shredded physique and disciplined approach inspire the next wave of warriors chasing their best selves.",
     category: ["all", "fitness-model", "athlete"],
   },
+  {
+    id: "abhishek-sonule",
+    name: "Abhishek Sonule",
+    photo: "/images/team/abhishek-sonule.jpeg",
+    roles: ["Athlete"],
+    specializations: [],
+    bio: "Newest addition to the Power Storm athlete roster. Abhishek brings raw drive and disciplined training to the G360 family, ready to represent the brand on his journey forward.",
+    category: ["all", "athlete"],
+  },
 ];
 
 // ============================================
