@@ -260,6 +260,15 @@ const athletes: Athlete[] = [
     bio: "Newest addition to the Power Storm athlete roster. Abhishek brings raw drive and disciplined training to the G360 family, ready to represent the brand on his journey forward.",
     category: ["all", "athlete"],
   },
+  {
+    id: "prathamesh-vichare",
+    name: "Prathamesh Vichare",
+    photo: "/images/team/prathamesh-vichare.jpeg",
+    roles: ["Athlete"],
+    specializations: [],
+    bio: "Athlete representing the G360 family with sharp conditioning and a focused training mindset. Prathamesh embodies the quiet, disciplined work that builds real strength over time.",
+    category: ["all", "athlete"],
+  },
 ];
 
 // ============================================
