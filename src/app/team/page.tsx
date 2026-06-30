@@ -269,6 +269,24 @@ const athletes: Athlete[] = [
     bio: "Athlete representing the G360 family with sharp conditioning and a focused training mindset. Prathamesh embodies the quiet, disciplined work that builds real strength over time.",
     category: ["all", "athlete"],
   },
+  {
+    id: "azhar-shaikh",
+    name: "Azhar Shaikh",
+    photo: "/images/team/azhar-shaikh.jpeg",
+    roles: ["Athlete"],
+    specializations: [],
+    bio: "Dedicated G360 athlete driven by discipline and a relentless work ethic. Azhar brings consistent training and a true warrior mindset to the Power Storm family as he builds toward his peak.",
+    category: ["all", "athlete"],
+  },
+  {
+    id: "farha-shaikh",
+    name: "Farha Shaikh",
+    photo: "/images/team/farha-shaikh.jpeg",
+    roles: ["Athlete"],
+    specializations: [],
+    bio: "Dedicated G360 athlete representing the Power Storm family with strength, focus, and determination. Farha trains with discipline and heart, inspiring the next generation of women in fitness.",
+    category: ["all", "athlete"],
+  },
 ];
 
 // ============================================
